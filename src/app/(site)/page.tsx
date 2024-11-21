@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import useCanvasCursor from '@/animations/canvahook/useCanvasCursor '
-  
+import HomeHero from '@/components/Home/HomeHero'  
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 
      
      <div className="m-60">
-        hello
+        <HomeHero />
      </div>
       
 
