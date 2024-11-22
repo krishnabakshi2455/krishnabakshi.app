@@ -27,63 +27,14 @@ export type Blog = {
     keywords: string[];
     content: TypedObject[];
 }
-
-export type Service = {
+export type SKILLS = {
     _id: string;
-    _createdAt: string;
-    _updatedAt: string;
-    name: string;
-    slug: string;
-    category: Category;
-    description: string;
-    banner: string;
-    image: string;
-    keywords: string[];
     title: string;
-    section1?: {
-        title?: string;
-        paragraph?: string;
-        subsection?: {
-            title?: string;
-            paragraph?: string;
-            list?: string[];
-        }
-    },
-    ourservices?: {
-        title?: string;
-        paragraph?: string;
-        services?: {
-            title?: string;
-            image?: string;
-            description?: string;
-        }[];
-    },
-    beforeafter?: {
-        title?: string;
-        paragraph?: string;
-        image1?: {
-            before?: string;
-            after?: string;
-        };
-        image2?: {
-            before?: string;
-            after?: string;
-        }
-    },
-    ourwork?: {
-        title?: string;
-        paragraph?: string;
-        images?: {
-            url?: string;
-        }[];
-    }
-    faq: Faq[];
+    thumbnail: string;
 }
 
-export type Faq = {
-    question: string;
-    answer: string;
-}
+
+
 
 export type Location = {
     _id: string;

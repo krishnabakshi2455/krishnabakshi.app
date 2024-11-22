@@ -1,21 +1,15 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import "./Header.css";
 import AOS from 'aos'
 import 'aos/dist/aos.css';
+import { IoMdMenu } from "react-icons/io";
 
 
 const Header: React.FC = () => {
     const pathname = usePathname();
-    const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
-    const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({
-        left: 0,
-        width: 0,
-    });
+
 
     const linkspath = [
         { name: "Home", path: "/" },
@@ -26,68 +20,43 @@ const Header: React.FC = () => {
 
     const isActive = (path: string) => pathname === path;
 
-    // Update the indicator position and size when pathname changes
-    useEffect(() => {
-        const activeLink = linkRefs.current[pathname];
-        if (activeLink) {
-            const rect = activeLink.getBoundingClientRect();
-            setIndicatorStyle({
-                left: activeLink.offsetLeft,
-                width: rect.width,
-            });
-        }
-    }, [pathname]);
+
 
     return (
         <div className="fixed top-10 h-10 w-screen z-10">
-            <div className="header-container-main flex justify-around gap-96 items-center w-full">
+            <div className=" flex justify-around gap-96 items-center w-full">
                 {/* Logo Section */}
-                <div className="header-logo-container-container bg-white rounded-full">
-                    <motion.button
-                        className="button text-lg bg-[#32CD32] w-10 h-9 rounded-full text-white"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
+                <div 
+                className=" text-white bg-[#32CD32] px-3 py-1 rounded-full hover:scale-125 ease-in-out duration-300 cursor-pointer">
                         K
-                    </motion.button>
                 </div>
 
                 {/* Header Links Section */}
-                <div className="flex gap-7 border-solid justify-center border-2 shadow-gray-300 p-5 rounded-full shadow-lg bg-white w-96 relative" data-aos="fade-up">
-                    {/* Active Background Indicator */}
-                    <motion.div
-                        // className="absolute top-0 h-full bg-[#32CD32] rounded-full -z-10"
-                        // animate={{
-                        //     left: `${indicatorStyle.left}px`,  // Animate left position
-                        //     width: `${indicatorStyle.width}px`, // Animate width
-                        // }}
-                        // transition={{
-                        //     duration: 0.3, // Transition time for smooth sliding
-                        //     ease: "easeInOut",
-                        // }}
-                    />
+                <div 
+                className="md:flex md:gap-7 border-solid justify-center border-2 shadow-gray-300 p-5 rounded-full shadow-lg
+                
+                bg-white w-96 relative " 
+                data-aos="fade-up"
+                >
+                
                     {/* Links */}
-                    {linkspath.map((link) => (
-                        <motion.div
-                            key={link.path}
-                            className="relative"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
+                    {linkspath.map((link,index) => (
+                        <div key={index} className="">
                             <Link
-                                href={link.path}
-                                passHref
-                                ref={(el) => {
-                                    linkRefs.current[link.path] = el as HTMLAnchorElement;
-                                }}
-                                className={`p-2 header-links-container ${isActive(link.path) ? "text-white bg-[#32CD32] rounded-full" : "text-black"}`}
+                                href={link.path}                               
+                                className={`p-2 ${isActive(link.path) ? " md:text-white md:bg-[#32CD32] md:rounded-full kb1:hidden md:block" : "kb1:hidden text-black hover:text-[#32CD32] ease-in-out duration-300 md:block"}
+                                `}
                             >
                                 {link.name}
                             </Link>
-                        </motion.div>
+                        </div >
                     ))}
+                    {/* this is mobile menu */}
+                    <div className=" kb1:block md:hidden kb1:text-[20px] w-5">
+                        <IoMdMenu />
+                    </div>
+
+                    
                 </div>
             </div>
         </div>

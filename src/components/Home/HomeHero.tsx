@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css';
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <>
 
-      <div data-aos="fade-down-right"  className='w-full '>
+      <div data-aos="fade-down-right" className='w-full h-[30vh] border-solid border-black'>
         {/* heading start */}
         <div className='flex flex-col'>
           <h1 className='text-[80px] font-semibold'>Krishna Bakshi</h1>
@@ -24,7 +25,7 @@ const Home = () => {
 
         {/* heading paragraph */}
 
-        <p className='text-[20px]'>
+        <p className='text-[20px] w-[50vw]'>
           Passionate FullStack Developer | Transforming Ideas Into Seamless And Visually Stunning Web Solution Skilled in ReactJS, NextJS, and an expert in JavaScript, TypeScript, HTML and CSS
         </p>
       </div>
