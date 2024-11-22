@@ -9,9 +9,19 @@ export default function Home() {
     <>
 
      
-     <div className="m-60">
+     <div className={
+      `md:m-60`
+     }>
 
-      <div className="flex flex-col gap-56">
+      <div className={`
+        md:flex
+        md:flex-col
+        md:gap-56
+
+        kb1:flex
+        kb1:flex-col
+        kb1:gap-24
+        `}>
           <HomeHero />
           <HomeSkills />
       </div>

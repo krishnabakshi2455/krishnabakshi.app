@@ -1,46 +1,113 @@
 
 import React from 'react'
-import { getlanguages, getlibrariesframeworks,getbackend,getdatabase,gettools } from '@/lib/sanity/utils'
+import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools } from '@/lib/sanity/utils'
 
 const HomeSkills = async () => {
-    const  languages  = await getlanguages()
+    const languages = await getlanguages()
     const librariesframeworks = await getlibrariesframeworks()
     const backend = await getbackend()
     const database = await getdatabase()
     const tools = await gettools()
 
-    
+
     return (
         <>
             {/* skill div */}
-            <div className='w-full'>
+            <div className={`
+                md:w-full
+                md:-z-20
+
+                kb1:w-screen
+                kb1:z-20
+                `}>
 
                 {/* heading */}
                 <div>
-                    <h1 className='text-[40px] font-semibold'>Skills</h1>
+                    <h1 className={`
+                        md:text-[40px]
+                        md:font-semibold
+
+                        kb1:text-[25px]
+                        kb1:font-bold
+                        kb1:ml-5
+                        `}>
+                        Skills
+                    </h1>
                 </div>
 
                 {/* languages */}
 
-                <div className='mt-4 ml-2'>
-                    <h2 className='text-[20px] font-semibold'>
-                        languages
+                <div className={`
+                    md:mt-4
+                    md:ml-2
+
+                    kb1:mt-5
+                    kb1:ml-5
+                    `}>
+                    <h2 className={`
+                        md:text-[20px]
+                        md:font-semibold
+
+                        kb1:text-[15px]
+                        kb1:font-bold
+                        `}>
+                        Languages
                     </h2>
 
-                    <div className='grid grid-cols-4 gap-4 w-full'>
+                    <div className={`
+                        md:grid
+                        md:grid-cols-4
+                        md:gap-4
+                        md:w-full
+
+                        kb1:grid
+                        kb1:grid-cols-2
+                        kb1:gap-2
+                        kb1:w-full
+                        `}>
                         {languages.map((item) => {
                             return (
                                 <div
                                     key={item._id}
-                                    className='flex gap-5 border border-gray-300 p-2 items-center rounded-lg'
+                                    className={`
+                                        md:flex
+                                        md:gap-5
+                                        md:border
+                                        md:border-gray-300 
+                                        md:p-2 
+                                        md:items-center 
+                                        md:rounded-lg
+
+                                        kb1:flex
+                                        kb1:gap-2
+                                        kb1:border
+                                        kb1:border-gray-300
+                                        kb1:p-1
+                                        kb1:items-center
+                                        kb1:rounded-lg
+                                        `}
                                     data-aos="fade-right"
                                 >
                                     <img
                                         src={item.thumbnail}
                                         alt="no-image"
-                                        className='w-10 h-10 object-contain'
+                                        className={`
+                                            md:w-10
+                                            md:h-10
+                                            md:object-contain
+
+                                            kb1:w-7
+                                            kb1:h-7
+                                            kb1:object-contain
+                                            `}
                                     />
-                                    <p className='text-[18px] font-medium'>{item.title}</p>
+                                    <p className={`
+                                        md:text-[18px]
+                                        md:font-medium
+
+                                        kb1:text-[12px]
+                                        kb1:font-bold
+                                        `}>{item.title}</p>
                                 </div>
                             );
                         })}
@@ -49,25 +116,85 @@ const HomeSkills = async () => {
 
                 {/* Libraries and Frameworks */}
 
-                <div className='mt-4 ml-2'>
-                    <h2 className='text-[20px] font-semibold'>
+                <div
+                    className={`
+                    md:mt-4
+                    md:ml-2
+
+                    kb1:mt-5
+                    kb1:ml-5
+                    `}
+                >
+                    <h2
+                        className={`
+                        md:text-[20px]
+                        md:font-semibold
+
+                        kb1:text-[15px]
+                        kb1:font-bold
+                        `}
+                    >
                         Libraries and Frameworks
                     </h2>
 
-                    <div className='grid grid-cols-4 gap-4 w-full'>
+                    <div
+                        className={`
+                        md:grid
+                        md:grid-cols-4
+                        md:gap-4
+                        md:w-full
+
+                        kb1:grid
+                        kb1:grid-cols-2
+                        kb1:gap-2
+                        kb1:w-full
+                        `}
+                    >
                         {librariesframeworks.map((item) => {
                             return (
                                 <div
                                     key={item._id}
-                                    className='flex gap-5 border border-gray-300 p-2 items-center rounded-lg'
                                     data-aos="fade-right"
+                                    className={`
+                                        md:flex
+                                        md:gap-5
+                                        md:border
+                                        md:border-gray-300 
+                                        md:p-2 
+                                        md:items-center 
+                                        md:rounded-lg
+
+                                        kb1:flex
+                                        kb1:gap-2
+                                        kb1:border
+                                        kb1:border-gray-300
+                                        kb1:p-1
+                                        kb1:items-center
+                                        kb1:rounded-lg
+                                        `}
                                 >
                                     <img
                                         src={item.thumbnail}
                                         alt="no-image"
-                                        className='w-10 h-10 object-contain'
+                                        className={`
+                                            md:w-10
+                                            md:h-10
+                                            md:object-contain
+
+                                            kb1:w-7
+                                            kb1:h-7
+                                            kb1:object-contain
+                                            `}
                                     />
-                                    <p className='text-[18px] font-medium'>{item.title}</p>
+                                    <p
+                                        className={`
+                                        md:text-[18px]
+                                        md:font-medium
+
+                                        kb1:text-[12px]
+                                        kb1:font-bold
+                                        `}
+                                    >{item.title}</p>
                                 </div>
                             );
                         })}
@@ -76,25 +203,85 @@ const HomeSkills = async () => {
 
                 {/* Backend */}
 
-                <div className='mt-4 ml-2'>
-                    <h2 className='text-[20px] font-semibold'>
+                <div 
+                    className={`
+                    md:mt-4
+                    md:ml-2
+
+                    kb1:mt-5
+                    kb1:ml-5
+                    `}
+                >
+                    <h2 
+                        className={`
+                        md:text-[20px]
+                        md:font-semibold
+
+                        kb1:text-[15px]
+                        kb1:font-bold
+                        `}
+                    >
                         Backend
                     </h2>
 
-                    <div className='grid grid-cols-4 gap-4 w-full'>
+                    <div 
+                        className={`
+                        md:grid
+                        md:grid-cols-4
+                        md:gap-4
+                        md:w-full
+
+                        kb1:grid
+                        kb1:grid-cols-2
+                        kb1:gap-2
+                        kb1:w-full
+                        `}
+                    >
                         {backend.map((item) => {
                             return (
                                 <div
                                     key={item._id}
-                                    className='flex gap-5 border border-gray-300 p-2 items-center rounded-lg'
                                     data-aos="fade-right"
+                                    className={`
+                                        md:flex
+                                        md:gap-5
+                                        md:border
+                                        md:border-gray-300 
+                                        md:p-2 
+                                        md:items-center 
+                                        md:rounded-lg
+
+                                        kb1:flex
+                                        kb1:gap-2
+                                        kb1:border
+                                        kb1:border-gray-300
+                                        kb1:p-1
+                                        kb1:items-center
+                                        kb1:rounded-lg
+                                        `}
                                 >
                                     <img
                                         src={item.thumbnail}
                                         alt="no-image"
-                                        className='w-10 h-10 object-contain'
+                                        className={`
+                                            md:w-10
+                                            md:h-10
+                                            md:object-contain
+
+                                            kb1:w-7
+                                            kb1:h-7
+                                            kb1:object-contain
+                                            `}
                                     />
-                                    <p className='text-[18px] font-medium'>{item.title}</p>
+                                    <p 
+                                        className={`
+                                        md:text-[18px]
+                                        md:font-medium
+
+                                        kb1:text-[12px]
+                                        kb1:font-bold
+                                        `}
+                                    >{item.title}</p>
                                 </div>
                             );
                         })}
@@ -103,25 +290,85 @@ const HomeSkills = async () => {
 
                 {/* Databases */}
 
-                <div className='mt-4 ml-2'>
-                    <h2 className='text-[20px] font-semibold'>
+                <div 
+                    className={`
+                    md:mt-4
+                    md:ml-2
+
+                    kb1:mt-5
+                    kb1:ml-5
+                    `}
+                >
+                    <h2 
+                        className={`
+                        md:text-[20px]
+                        md:font-semibold
+
+                        kb1:text-[15px]
+                        kb1:font-bold
+                        `}
+                    >
                         Databases
                     </h2>
 
-                    <div className='grid grid-cols-4 gap-4 w-full'>
+                    <div 
+                        className={`
+                        md:grid
+                        md:grid-cols-4
+                        md:gap-4
+                        md:w-full
+
+                        kb1:grid
+                        kb1:grid-cols-2
+                        kb1:gap-2
+                        kb1:w-full
+                        `}
+                    >
                         {database.map((item) => {
                             return (
                                 <div
                                     key={item._id}
-                                    className='flex gap-5 border border-gray-300 p-2 items-center rounded-lg'
                                     data-aos="fade-right"
+                                    className={`
+                                        md:flex
+                                        md:gap-5
+                                        md:border
+                                        md:border-gray-300 
+                                        md:p-2 
+                                        md:items-center 
+                                        md:rounded-lg
+
+                                        kb1:flex
+                                        kb1:gap-2
+                                        kb1:border
+                                        kb1:border-gray-300
+                                        kb1:p-1
+                                        kb1:items-center
+                                        kb1:rounded-lg
+                                        `}
                                 >
                                     <img
                                         src={item.thumbnail}
                                         alt="no-image"
-                                        className='w-10 h-10 object-contain'
+                                        className={`
+                                            md:w-10
+                                            md:h-10
+                                            md:object-contain
+
+                                            kb1:w-7
+                                            kb1:h-7
+                                            kb1:object-contain
+                                            `}
                                     />
-                                    <p className='text-[18px] font-medium'>{item.title}</p>
+                                    <p 
+                                        className={`
+                                        md:text-[18px]
+                                        md:font-medium
+
+                                        kb1:text-[12px]
+                                        kb1:font-bold
+                                        `}
+                                    >{item.title}</p>
                                 </div>
                             );
                         })}
@@ -130,25 +377,86 @@ const HomeSkills = async () => {
 
                 {/* Tools and Technologies */}
 
-                <div className='mt-4 ml-2'>
-                    <h2 className='text-[20px] font-semibold'>
+                <div 
+                    className={`
+                    md:mt-4
+                    md:ml-2
+
+                    kb1:mt-5
+                    kb1:ml-5
+                    `}
+                >
+                    <h2 
+                        className={`
+                        md:text-[20px]
+                        md:font-semibold
+
+                        kb1:text-[15px]
+                        kb1:font-bold
+                        `}
+                    >
                         Tools and Technologies
                     </h2>
 
-                    <div className='grid grid-cols-4 gap-4 w-full'>
+                    <div 
+                    
+                        className={`
+                        md:grid
+                        md:grid-cols-4
+                        md:gap-4
+                        md:w-full
+
+                        kb1:grid
+                        kb1:grid-cols-2
+                        kb1:gap-2
+                        kb1:w-full
+                        `}
+                        >
                         {tools.map((item) => {
                             return (
                                 <div
                                     key={item._id}
-                                    className='flex gap-5 border border-gray-300 p-2 items-center rounded-lg'
                                     data-aos="fade-right"
+                                    className={`
+                                        md:flex
+                                        md:gap-5
+                                        md:border
+                                        md:border-gray-300 
+                                        md:p-2 
+                                        md:items-center 
+                                        md:rounded-lg
+
+                                        kb1:flex
+                                        kb1:gap-2
+                                        kb1:border
+                                        kb1:border-gray-300
+                                        kb1:p-1
+                                        kb1:items-center
+                                        kb1:rounded-lg
+                                        `}
                                 >
                                     <img
                                         src={item.thumbnail}
                                         alt="no-image"
-                                        className='w-10 h-10 object-contain'
+                                        className={`
+                                            md:w-10
+                                            md:h-10
+                                            md:object-contain
+
+                                            kb1:w-7
+                                            kb1:h-7
+                                            kb1:object-contain
+                                            `}
                                     />
-                                    <p className='text-[18px] font-medium'>{item.title}</p>
+                                    <p 
+                                        className={`
+                                        md:text-[18px]
+                                        md:font-medium
+
+                                        kb1:text-[12px]
+                                        kb1:font-bold
+                                        `}
+                                    >{item.title}</p>
                                 </div>
                             );
                         })}
