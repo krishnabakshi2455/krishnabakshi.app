@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import AOS from 'aos'
-import 'aos/dist/aos.css';
 import { IoMdMenu } from "react-icons/io";
 import { IoMdCloseCircle } from "react-icons/io";
 
