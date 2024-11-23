@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next lint --no-eslint",
     "start": "next start",
     "lint": "next lint"
+    
   },
   "dependencies": {
     "@types/aos": "^3.0.7",
