@@ -6,7 +6,6 @@ const useCanvasCursor = () => {
     let ctx = null;
     let pos = { x: 0, y: 0 };
     let lines = [];
-    let f = null;
 
     const E = {
         debug: true,
@@ -154,13 +153,7 @@ const useCanvasCursor = () => {
         ctx.running = true;
         ctx.frame = 1;
 
-        f = new n({
-            phase: Math.random() * 2 * Math.PI,
-            amplitude: 85,
-            frequency: 0.0015,
-            offset: 285,
-        });
-
+        // Initialize lines and wave generator
         lines = [];
         for (let i = 0; i < E.trails; i++) {
             lines.push(new Line({ spring: 0.4 + (i / E.trails) * 0.025 }));
