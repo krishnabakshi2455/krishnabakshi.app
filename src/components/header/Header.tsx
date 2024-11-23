@@ -145,11 +145,11 @@ const Header: React.FC = () => {
                     kb1:py-10
                     kb1:shadow-md
                     kb1:fixed
-                    ${isOpen ? "kb1:top-0" : "kb1:-top-[400px]"}
+                    ${isOpen ? "kb1:top-0" : "kb1:-top-[800px]"}
                     kb1:right-0
                     kb1:z-50
                     kb1:transition-all
-                    kb1:duration-300
+                    kb1:duration-500
                     kb1:ease-in-out
                     kb1:visible
 
