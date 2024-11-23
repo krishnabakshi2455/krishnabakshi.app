@@ -136,10 +136,11 @@ const Header: React.FC = () => {
                     <div 
                         className={`
                     kb1:bg-white
-                    kb1:w-[390px]
+                    kb1:w-screen
+                    kb1:h-[65vh]
                     kb1:flex
                     kb1:flex-col
-                    kb1:gap-8
+                    kb1:gap-5
                     kb1:justify-center
                     kb1:items-center
                     kb1:px-10
@@ -147,13 +148,12 @@ const Header: React.FC = () => {
                     kb1:shadow-md
                     kb1:fixed
                     ${isOpen ? "kb1:top-0" : "kb1:-top-[400px]"}
-                    kb1:right-[0px]
+                    kb1:right-0
                     kb1:z-50
                     kb1:transition-all
                     kb1:duration-300
                     kb1:ease-in-out
                     kb1:visible
-                    kb1:ml-3
 
 
                     md:hidden`}
@@ -165,13 +165,14 @@ const Header: React.FC = () => {
                        kb1:gap-7
                        kb1:items-center
                        kb1:justify-center
-                       kb1:ml-16
+                       kb1:ml-10
+                       kb1:w-full
                        ">
                             {linkspath.map((link, index) => (
                                 <div key={index} className="" onClick={toggleMenuclose}>
                                     <Link
                                         href={link.path}
-                                        className={`p-2 ${isActive(link.path) ? "kb1:bg-[#32CD32] kb1:text-white kb1:rounded-full kb1:text-[22px]" : "text-black hover:text-[#32CD32] ease-in-out duration-300 kb1:text-[22px]"}
+                                        className={`p-2 ${isActive(link.path) ? "kb1:bg-[#32CD32] kb1:text-white kb1:rounded-full kb1:text-[25px]" : "text-black hover:text-[#32CD32] ease-in-out duration-300 kb1:text-[25px]"}
                                 `}
                                     >
                                         {link.name}

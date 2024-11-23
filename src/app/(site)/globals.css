@@ -12,6 +12,31 @@
     --maintextcolor: #32CD32;
   }
 }
+/* For WebKit browsers like Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #32CD32; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Makes the thumb rounded */
+}
+
+/* Optional: Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #28a428; /* Darker green on hover */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin; /* Adjust the scrollbar width */
+  scrollbar-color: #32CD32 black; /* Thumb color and track background */
+}
+
 
 body {
   color: var(--maintextcolor);

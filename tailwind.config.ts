@@ -62,9 +62,6 @@ export default {
 			},
 			screens:{
 				kb1: '300px',
-				kb2: '400px',
-				kb3: '500px',
-				kb4: '630px'
 			}
 		}
 	},
