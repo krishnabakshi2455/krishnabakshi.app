@@ -9,7 +9,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --darktheme: #000000;
-    --maintextcolor: #32CD32;
   }
 }
 /* For WebKit browsers like Chrome, Edge, Safari */
@@ -39,7 +38,7 @@ html {
 
 
 body {
-  color: var(--maintextcolor);
+  color: #32CD32;
   font-family: Arial, Helvetica, sans-serif;
 }
 @layer base {
