@@ -1,6 +1,6 @@
-import { SchemaTypeDefinition } from "sanity";
+import { SchemaTypeDefinition, ValidationContext } from "sanity";
 
-const blog: SchemaTypeDefinition = {
+const Languages: SchemaTypeDefinition = {
     name: "languages",
     title: "Languages",
     type: "document",
@@ -19,11 +19,15 @@ const blog: SchemaTypeDefinition = {
             validation: (Rule) => [
                 Rule.required(),
                 Rule.max(65).warning('Too long: Title should be less than 65 characters'),
-                Rule.custom((title: string, context: any) => {
-                    if (!title) return true;
-                    if (!context.document.keyphrase) return true;
-                    if (title.toLowerCase().includes(context.document.keyphrase.toLowerCase())) return true;
-                    return `Title should contain keyphrase "${context.document.keyphrase}"`;
+                Rule.custom((title: string, context: ValidationContext) => {
+                    const keyphrase = context.document?.keyphrase;
+
+                    // Ensure keyphrase is a string
+                    if (!keyphrase || typeof keyphrase !== 'string') return true;
+
+                    if (title.toLowerCase().includes(keyphrase.toLowerCase())) return true;
+
+                    return `Title should contain keyphrase "${keyphrase}"`;
                 }).warning()
             ]
         },
@@ -31,9 +35,9 @@ const blog: SchemaTypeDefinition = {
             name: 'thumbnail',
             title: 'Thumbnail',
             type: 'image',
-            validation: Rule => Rule.required()
+            validation: (Rule) => Rule.required()
         },
     ]
-}
+};
 
-export default blog;
+export default Languages;
