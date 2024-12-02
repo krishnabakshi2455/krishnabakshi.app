@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/header/Header";
+import Header from "@/components/layout/Header";
 import 'aos/dist/aos.css';
+import { NavigationContainer } from "./NavigationContainer";
 
 
 
@@ -22,6 +23,8 @@ export default function RootLayout({
       >
         <Header />
         {children}
+
+        <NavigationContainer/>
       </body>
     </html>
   );

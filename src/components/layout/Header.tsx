@@ -1,6 +1,6 @@
 "use client";
 import React, {  useState } from "react";
-import Link from "next/link";
+import Link from "./custom-link";
 import { usePathname } from "next/navigation";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdCloseCircle } from "react-icons/io";
