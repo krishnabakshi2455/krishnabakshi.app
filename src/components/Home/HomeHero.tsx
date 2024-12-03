@@ -1,22 +1,46 @@
 "use client"
-import React, { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css';
+import { useState, useEffect, useRef } from 'react';
 
 
+import Typewriter from 'typewriter-effect';
+
+
+const homedata = {
+  
+  roles: [
+    "Full Stack Developer",
+    "Programmer",
+    "Problem Solver",
+  ],
+}
 const Home = () => {
 
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<any>();
+
   useEffect(() => {
-    AOS.init({
-      duration: 1000,  // Duration of the animation in milliseconds
-      easing: 'ease-in-out',  // Easing function for the animation
-      once: true,  // Animation happens only once
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }, // Adjust this for sensitivity
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
   }, []);
+  
   return (
     <>
 
-      <div data-aos="fade-down-right" className={`
+      <div  className={`
         md:w-full
         md:h-[30vh]
         md:border-solid
@@ -30,7 +54,9 @@ const Home = () => {
         kb1:justify-center
         kb1:items-center
 
-        `}>
+        ${isVisible?' animate-in fade-in duration-1000':'animate-out fade-out duration-1000'}
+
+        `} ref={ref}>
         {/* heading start */}
         <div className={`
           md:flex
@@ -57,7 +83,18 @@ const Home = () => {
             md:text-[50px]
 
             kb1:text-[20px]
-            `}>Full Stack Developer
+            flex
+            gap-2
+            `}> 
+            I am a <span>
+              <Typewriter
+                options={{
+                  strings: homedata.roles,
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
           </h2>
         </div>
 

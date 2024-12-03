@@ -1,14 +1,40 @@
 
-import React from 'react'
+// import { useState, useEffect, useRef } from 'react';
 import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools } from '@/lib/sanity/utils'
 
 const HomeSkills = async () => {
+   
     const languages = await getlanguages()
     const librariesframeworks = await getlibrariesframeworks()
     const backend = await getbackend()
     const database = await getdatabase()
     const tools = await gettools()
+    
+    
 
+    
+    
+    // const [isVisible, setIsVisible] = useState(false);
+    // const ref = useRef<any>();
+
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             setIsVisible(entry.isIntersecting);
+    //         },
+    //         { threshold: 0.1 }, // Adjust this for sensitivity
+    //     );
+
+    //     if (ref.current) {
+    //         observer.observe(ref.current);
+    //     }
+
+    //     return () => {
+    //         if (ref.current) {
+    //             observer.unobserve(ref.current);
+    //         }
+    //     };
+    // }, []);
 
     return (
         <>
@@ -86,7 +112,6 @@ const HomeSkills = async () => {
                                         kb1:items-center
                                         kb1:rounded-lg
                                         `}
-                                    data-aos="fade-right"
                                 >
                                     <img
                                         src={item.thumbnail}
@@ -154,7 +179,7 @@ const HomeSkills = async () => {
                             return (
                                 <div
                                     key={item._id}
-                                    data-aos="fade-right"
+                                   
                                     className={`
                                         md:flex
                                         md:gap-5
@@ -241,7 +266,7 @@ const HomeSkills = async () => {
                             return (
                                 <div
                                     key={item._id}
-                                    data-aos="fade-right"
+                                   
                                     className={`
                                         md:flex
                                         md:gap-5
@@ -328,7 +353,6 @@ const HomeSkills = async () => {
                             return (
                                 <div
                                     key={item._id}
-                                    data-aos="fade-right"
                                     className={`
                                         md:flex
                                         md:gap-5
@@ -416,7 +440,7 @@ const HomeSkills = async () => {
                             return (
                                 <div
                                     key={item._id}
-                                    data-aos="fade-right"
+                                   
                                     className={`
                                         md:flex
                                         md:gap-5
