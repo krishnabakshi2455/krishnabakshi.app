@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import 'aos/dist/aos.css';
 import { NavigationContainer } from "./NavigationContainer";
+import Chatbot from "@/components/layout/Chatbot";
 
 
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         {children}
 
         <NavigationContainer/>
+        <Chatbot/>
       </body>
     </html>
   );
