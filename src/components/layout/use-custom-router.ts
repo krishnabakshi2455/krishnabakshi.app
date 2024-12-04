@@ -7,7 +7,7 @@ export const navigatingAtom = atom(false);
 
 const useRouter = () => {
     const router = useNextRouter();
-    const [navigating, setNavigating] = useAtom(navigatingAtom);
+    const [, setNavigating] = useAtom(navigatingAtom);
     const pathname = usePathname();
 
     useEffect(() => {

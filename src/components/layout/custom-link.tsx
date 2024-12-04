@@ -12,12 +12,15 @@ interface CustomLinkProps extends LinkProps {
 }
 
 const Link = forwardRef<HTMLAnchorElement, CustomLinkProps>((props, ref) => {
-    const [navigating, setNavigating] = useAtom(navigatingAtom);
+    const [, setNavigating] = useAtom(navigatingAtom); // Ignore 'navigating'
     const pathname = usePathname();
-    
+
     const handleClick = () => {
-        if (props.href.toString().split('?')[0] !== pathname?.split('?')[0]) setNavigating(true);
+        if (props.href.toString().split('?')[0] !== pathname?.split('?')[0]) {
+            setNavigating(true);
+        }
     };
+
     return (
         <NextLink {...props} ref={ref} className={props.className} onClick={handleClick}>
             {props.children}
