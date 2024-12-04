@@ -16,7 +16,7 @@ const homedata = {
 const Home = () => {
 
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<any>();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -54,16 +54,6 @@ function EmailOption() {
                     </Button>
                 </div>
             </div>
-            {/* <div className="p-2 bg-secondary rounded-lg">
-                <a
-                    href="mailto:krishnabakshi2455@gmail.com"
-                    className="text-blue-800 underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    @Email Me
-                </a>
-            </div> */}
         </div>
     );
 }
@@ -113,9 +103,9 @@ function PhoneOption() {
 }
 
 export default function Chatbot() {
-    const scrollViewportRef = useRef<any>();
+    const scrollViewportRef = useRef<HTMLDivElement | null>(null);
     const [open, setOpen] = useState(false);
-    const [messages, setMessages] = useState<any[]>([]);
+    const [messages, setMessages] = useState<React.ReactNode[]>([]);
     const [reloadKey, setReloadKey] = useState(0);
 
     useEffect(() => {

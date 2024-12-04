@@ -2,8 +2,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from "./custom-link";
 import { usePathname } from "next/navigation";
-import { IoMdMenu } from "react-icons/io";
-import { IoMdCloseCircle } from "react-icons/io";
 import MobileNav from '../Home/mobile-nav';
 
 const Header: React.FC = () => {
@@ -19,22 +17,9 @@ const Header: React.FC = () => {
 
     const isActive = (path: string) => pathname === path;
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenuopen = () => {
-        setIsOpen(true);
-        console.log(isOpen);
-
-    };
-
-    const toggleMenuclose = () => {
-        setIsOpen(false);
-        console.log(isOpen);
-
-    };
 
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef<any>();
+    const ref = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         const observer = new IntersectionObserver(
