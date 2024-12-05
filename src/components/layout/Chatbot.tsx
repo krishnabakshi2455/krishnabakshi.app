@@ -109,7 +109,9 @@ export default function Chatbot() {
     const [reloadKey, setReloadKey] = useState(0);
 
     useEffect(() => {
-        setOpen(true); // Open the chatbot
+        setTimeout(() => {
+            setOpen(true); // Open the chatbot
+        }, 3000);
     }, []);
 
 
