@@ -77,6 +77,7 @@ const Home = () => {
             kb1:text-[40px]
             kb1:font-semibold
             kb1:mt-7
+            text-primary
 
             `}>Krishna Bakshi</h1>
           <h2 className={`
@@ -86,7 +87,7 @@ const Home = () => {
             flex
             gap-2
             `}> 
-            I am a <span>
+            I am a <span className='text-primary'>
               <Typewriter
                 options={{
                   strings: homedata.roles,
@@ -101,7 +102,8 @@ const Home = () => {
         {/* heading paragraph */}
 
         <p className={`
-          md:text-[20px]
+          md:text-xl
+          md:font-bold
           md:w-[50vw]
 
           kb1:text-[15px]

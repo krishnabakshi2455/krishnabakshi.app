@@ -1,40 +1,52 @@
-
-// import { useState, useEffect, useRef } from 'react';
+"use client"
+import { useState, useEffect, useRef } from 'react';
 import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools } from '@/lib/sanity/utils'
+import { useAtom } from 'jotai'
+import { fetchedBackendSkillsAtom, fetchedDatabaseSkillsAtom, fetchedLanguagesSkillsAtom, fetchedLibrariesFrameworksSkillsAtom, fetchedToolsSkillsAtom } from '../jotai/AtomStore'
 
-const HomeSkills = async () => {
-   
-    const languages = await getlanguages()
-    const librariesframeworks = await getlibrariesframeworks()
-    const backend = await getbackend()
-    const database = await getdatabase()
-    const tools = await gettools()
-    
+
+const HomeSkills = () => {
     
 
     
+    const [languages] = useAtom(fetchedLanguagesSkillsAtom)
+    const [librariesframeworks] = useAtom(fetchedLibrariesFrameworksSkillsAtom) 
+    const [backend] = useAtom(fetchedBackendSkillsAtom)
+    const [database] = useAtom(fetchedDatabaseSkillsAtom)
+    const [tools] = useAtom(fetchedToolsSkillsAtom)
+    if (!languages || !librariesframeworks || !backend || !database || !tools) {
+        return <p>Loading...</p>;
+    }
     
-    // const [isVisible, setIsVisible] = useState(false);
-    // const ref = useRef<any>();
 
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             setIsVisible(entry.isIntersecting);
-    //         },
-    //         { threshold: 0.1 }, // Adjust this for sensitivity
-    //     );
 
-    //     if (ref.current) {
-    //         observer.observe(ref.current);
-    //     }
 
-    //     return () => {
-    //         if (ref.current) {
-    //             observer.unobserve(ref.current);
-    //         }
-    //     };
-    // }, []);
+    
+    
+    
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // setIsVisible(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setIsVisible(true); // Trigger animation
+                }
+            },
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -45,6 +57,7 @@ const HomeSkills = async () => {
 
                 kb1:w-screen
                 kb1:z-20
+                
                 `}>
 
                 {/* heading */}
@@ -56,6 +69,8 @@ const HomeSkills = async () => {
                         kb1:text-[25px]
                         kb1:font-bold
                         kb1:ml-5
+
+                        text-primary
                         `}>
                         Skills
                     </h1>
@@ -69,6 +84,8 @@ const HomeSkills = async () => {
 
                     kb1:mt-5
                     kb1:ml-5
+
+                    
                     `}>
                     <h2 className={`
                         md:text-[20px]
@@ -76,6 +93,7 @@ const HomeSkills = async () => {
 
                         kb1:text-[15px]
                         kb1:font-bold
+                        text-primary
                         `}>
                         Languages
                     </h2>
@@ -111,7 +129,13 @@ const HomeSkills = async () => {
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg
+                                         ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
+
+                                        
                                         `}
+
+                                    ref={ref}
+                                 
                                 >
                                     <img
                                         src={item.thumbnail}
@@ -157,6 +181,7 @@ const HomeSkills = async () => {
 
                         kb1:text-[15px]
                         kb1:font-bold
+                        text-primary
                         `}
                     >
                         Libraries and Frameworks
@@ -196,7 +221,12 @@ const HomeSkills = async () => {
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg
+
+                                        x1
+                                         ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
                                         `}
+
+                                  
                                 >
                                     <img
                                         src={item.thumbnail}
@@ -218,7 +248,10 @@ const HomeSkills = async () => {
 
                                         kb1:text-[12px]
                                         kb1:font-bold
+
+                                    
                                         `}
+                                       
                                     >{item.title}</p>
                                 </div>
                             );
@@ -244,6 +277,7 @@ const HomeSkills = async () => {
 
                         kb1:text-[15px]
                         kb1:font-bold
+                        text-primary
                         `}
                     >
                         Backend
@@ -283,7 +317,10 @@ const HomeSkills = async () => {
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg
+
+                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
                                         `}
+                                    
                                 >
                                     <img
                                         src={item.thumbnail}
@@ -331,6 +368,8 @@ const HomeSkills = async () => {
 
                         kb1:text-[15px]
                         kb1:font-bold
+
+                        text-primary
                         `}
                     >
                         Databases
@@ -369,6 +408,7 @@ const HomeSkills = async () => {
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg
+                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
                                         `}
                                 >
                                     <img
@@ -391,6 +431,7 @@ const HomeSkills = async () => {
 
                                         kb1:text-[12px]
                                         kb1:font-bold
+                                      
                                         `}
                                     >{item.title}</p>
                                 </div>
@@ -417,6 +458,8 @@ const HomeSkills = async () => {
 
                         kb1:text-[15px]
                         kb1:font-bold
+
+                        text-primary
                         `}
                     >
                         Tools and Technologies
@@ -457,7 +500,10 @@ const HomeSkills = async () => {
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg
+
+                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
                                         `}
+                                   
                                 >
                                     <img
                                         src={item.thumbnail}
