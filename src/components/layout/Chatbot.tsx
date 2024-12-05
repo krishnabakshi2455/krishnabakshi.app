@@ -49,7 +49,7 @@ function EmailOption() {
                         <a href='mailto:krishnabakshi2455@gmail.com' className="text-blue-800 underline"
                             target="_blank"
                             rel="noopener noreferrer">
-                             @Email
+                             krishnabakshi2455@gmail.com
                         </a>
                     </Button>
                 </div>
@@ -107,6 +107,11 @@ export default function Chatbot() {
     const [open, setOpen] = useState(false);
     const [messages, setMessages] = useState<React.ReactNode[]>([]);
     const [reloadKey, setReloadKey] = useState(0);
+
+    useEffect(() => {
+        setOpen(true); // Open the chatbot
+    }, []);
+
 
     useEffect(() => {
         if (reloadKey !== 0) {
