@@ -70,7 +70,7 @@ function ChatOption() {
                 <div>
                     <div className="p-2 bg-secondary rounded-lg rounded-b-none">Drop Me a Message on WhatsApp.</div>
                     <Button variant='outline' className="w-full rounded-t-none gap-1" asChild>
-                        <a href={`https://wa.me/917827660377?text=hi`} target="_blank">
+                        <a href={`https://wa.me/918743809657?text=hi`} target="_blank">
                             <MessageCircle /> Chat Now
                         </a>
                     </Button>
