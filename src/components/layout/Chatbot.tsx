@@ -45,11 +45,11 @@ function EmailOption() {
             <div className="flex gap-2 my-2">
                 <div>
                     <div className="p-2 bg-secondary rounded-lg rounded-b-none">Get in Touch via Email.</div>
-                    <Button variant='outline' className="w-full rounded-t-none gap-1" asChild>
-                        <a href='mailto:krishnabakshi2455@gmail.com' className="text-blue-800 underline"
+                    <Button variant='outline' className="w-full rounded-t-none  gap-1" asChild>
+                        <a href='mailto:krishnabakshi2455@gmail.com' className="text-blue-800 underline text-xsm"
                             target="_blank"
                             rel="noopener noreferrer">
-                             krishnabakshi2455@gmail.com
+                             krishnabakshi2455@
                         </a>
                     </Button>
                 </div>
@@ -125,18 +125,18 @@ export default function Chatbot() {
         setMessages([<Loader key="1" />]);
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <Welcome key="2" />, <Loader key="3" />]);
-        }, 2000);
+        }, 4000);
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <EmailOption key="4" />, <Loader key="5" />]);
-        }, 3000); // Show EmailOption after 2 seconds
+        }, 5000); // Show EmailOption after 2 seconds
 
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <ChatOption key="6" />, <Loader key="7" />]);
-        }, 4000); // Show ChatOption after 3 seconds
+        }, 6000); // Show ChatOption after 3 seconds
 
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <PhoneOption key="8" />]);
-        }, 5000);
+        }, 7000);
     }, [reloadKey]);
 
     useEffect(() => {
