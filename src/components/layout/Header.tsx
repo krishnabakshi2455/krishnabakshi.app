@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from "./custom-link";
 import { usePathname } from "next/navigation";
-import MobileNav from '../Home/mobile-nav';
+import MobileNav from './mobile-nav';
 
 const Header: React.FC = () => {
     const pathname = usePathname();
@@ -50,11 +50,12 @@ const Header: React.FC = () => {
             <div className="
              md:flex
              md:justify-around
-             md:gap-96
+             md:gap-80
              md:items-center
-             md:w-screen
+             md:w-full
              md:fixed
              md:top-10
+             
              
              
              kb1:gap-0

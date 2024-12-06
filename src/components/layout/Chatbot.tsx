@@ -160,7 +160,7 @@ export default function Chatbot() {
                 {open && (
                     <Card
                         className={cn(
-                            "absolute right-0 bottom-0 h-[75vh] w-[300px] sm:w-96 rounded-xl p-3 flex flex-col duration-300",
+                            "absolute -right-3 bottom-0 h-[75vh] w-[300px] sm:w-96 rounded-xl p-3 flex flex-col duration-300",
                             open && "animate-in zoom-in slide-in-from-bottom slide-in-from-right"
                         )}
                     >

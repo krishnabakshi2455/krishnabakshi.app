@@ -9,7 +9,9 @@ export default function Home() {
 
      
      <div className={
-      `md:m-60`
+      `md:mt-60
+      kb1:mt-12
+      `
      }>
 
       <div className={`

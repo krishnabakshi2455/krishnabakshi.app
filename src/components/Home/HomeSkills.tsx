@@ -51,10 +51,12 @@ const HomeSkills = () => {
             <div className={`
                 md:w-full
                 md:-z-20
+                md:p-10
+
 
                 kb1:w-screen
                 kb1:z-20
-                
+                kb1:p-5
                 `}>
 
                 {/* heading */}
@@ -65,7 +67,6 @@ const HomeSkills = () => {
 
                         kb1:text-[25px]
                         kb1:font-bold
-                        kb1:ml-5
 
                         text-primary
                         `}>
@@ -80,7 +81,7 @@ const HomeSkills = () => {
                     md:ml-2
 
                     kb1:mt-5
-                    kb1:ml-5
+          
 
                     
                     `}>
@@ -168,7 +169,7 @@ const HomeSkills = () => {
                     md:ml-2
 
                     kb1:mt-5
-                    kb1:ml-5
+                    
                     `}
                 >
                     <h2
@@ -264,7 +265,7 @@ const HomeSkills = () => {
                     md:ml-2
 
                     kb1:mt-5
-                    kb1:ml-5
+                   
                     `}
                 >
                     <h2 
@@ -355,7 +356,7 @@ const HomeSkills = () => {
                     md:ml-2
 
                     kb1:mt-5
-                    kb1:ml-5
+                   
                     `}
                 >
                     <h2 
@@ -445,7 +446,7 @@ const HomeSkills = () => {
                     md:ml-2
 
                     kb1:mt-5
-                    kb1:ml-5
+                   
                     `}
                 >
                     <h2 
