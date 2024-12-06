@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
-import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools } from '@/lib/sanity/utils'
+
 import { useAtom } from 'jotai'
 import { fetchedBackendSkillsAtom, fetchedDatabaseSkillsAtom, fetchedLanguagesSkillsAtom, fetchedLibrariesFrameworksSkillsAtom, fetchedToolsSkillsAtom } from '../jotai/AtomStore'
 
@@ -14,9 +14,6 @@ const HomeSkills = () => {
     const [backend] = useAtom(fetchedBackendSkillsAtom)
     const [database] = useAtom(fetchedDatabaseSkillsAtom)
     const [tools] = useAtom(fetchedToolsSkillsAtom)
-    if (!languages || !librariesframeworks || !backend || !database || !tools) {
-        return <p>Loading...</p>;
-    }
     
 
 
