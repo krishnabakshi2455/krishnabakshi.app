@@ -80,6 +80,28 @@ function ChatOption() {
     );
 }
 
+function LinkdinOption() {
+    return (
+        <div className="flex gap-2 my-2">
+            <img
+                src="/image/mainimg.jpg"
+                className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex-none border border-primary"
+            />
+
+            <div className="flex gap-2 my-2">
+                <div>
+                    <div className="p-2 bg-secondary rounded-lg rounded-b-none">Have an idea or opportunity? Let's connect on LinkedIn and make it happen.</div>
+                    <Button variant='outline' className="w-full rounded-t-none gap-1" >
+                        <a href="https://www.linkedin.com/in/krishna-bakshi-b905222a7/" rel="noopener noreferrer">
+                            <span className="text-blue-800"> LinkedIn</span>
+                        </a>
+                    </Button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function PhoneOption() {
     return (
         <div className="flex gap-2 my-2">
@@ -101,6 +123,8 @@ function PhoneOption() {
         </div>
     );
 }
+
+
 
 export default function Chatbot() {
     const scrollViewportRef = useRef<HTMLDivElement | null>(null);
@@ -135,8 +159,12 @@ export default function Chatbot() {
         }, 6000); // Show ChatOption after 3 seconds
 
         setTimeout(() => {
-            setMessages((prev) => [...prev.slice(0, -1), <PhoneOption key="8" />]);
+            setMessages((prev) => [...prev.slice(0, -1), <LinkdinOption key="8" />,<Loader key="9" />]);
         }, 7000);
+
+        setTimeout(() => {
+            setMessages((prev) => [...prev.slice(0, -1), <PhoneOption key="10" />]);
+        }, 8000);
     }, [reloadKey]);
 
     useEffect(() => {

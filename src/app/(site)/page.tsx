@@ -1,6 +1,7 @@
 import HomeHero from '@/components/Home/HomeHero'  
 import HomeSkills from "@/components/Home/HomeSkills";
 import UsingCanvaHook from '@/animations/canvahook/UsingCanvaHook'
+import HomeProjects from '@/components/Home/HomeProjects';
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         `}>
           <HomeHero />
           <HomeSkills />
+          <HomeProjects/>
       </div>
      </div>
       

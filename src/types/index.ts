@@ -32,7 +32,14 @@ export type SKILLS = {
     title: string;
     thumbnail: string;
 }
-
+export type Project = {
+    _id: string;
+    title:string
+    thumbnail: string;
+    description: string;
+    sourcecodelink:string
+    livelink:string
+}
 
 
 

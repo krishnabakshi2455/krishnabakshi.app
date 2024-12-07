@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { Blog, SKILLS } from "@/types";
+import { Blog, SKILLS,Project } from "@/types";
 
 const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -69,6 +69,18 @@ export async function gettools(): Promise<SKILLS[]> {
     groq`*[_type == "tools"]{
       _id,
       title,
+      "thumbnail": thumbnail.asset->url
+    }| order(_createdAt desc)`
+  )
+}
+export async function getprojects(): Promise<Project[]> {
+  return client.fetch(
+    groq`*[_type == "tools"]{
+      _id,
+      title,
+      description,
+      sourcecodelink,
+      livelink,
       "thumbnail": thumbnail.asset->url
     }| order(_createdAt desc)`
   )
