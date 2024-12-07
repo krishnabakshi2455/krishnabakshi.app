@@ -90,7 +90,7 @@ function LinkdinOption() {
 
             <div className="flex gap-2 my-2">
                 <div>
-                    <div className="p-2 bg-secondary rounded-lg rounded-b-none">Have an idea or opportunity? Let's connect on LinkedIn and make it happen.</div>
+                    <div className="p-2 bg-secondary rounded-lg rounded-b-none">Have an idea or opportunity? Let`s connect on LinkedIn and make it happen.</div>
                     <Button variant='outline' className="w-full rounded-t-none gap-1" >
                         <a href="https://www.linkedin.com/in/krishna-bakshi-b905222a7/" rel="noopener noreferrer">
                             <span className="text-blue-800"> LinkedIn</span>
