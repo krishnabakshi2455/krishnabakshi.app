@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from "./custom-link";
 import { usePathname } from "next/navigation";
 import MobileNav from './mobile-nav';
+import AnimatedLogo from "@/animations/animationlogo/animated-logo";
 
 const Header: React.FC = () => {
     const pathname = usePathname();
@@ -43,6 +44,8 @@ const Header: React.FC = () => {
         };
     }, []);
 
+    console.log(isVisible);
+    
 
 
     return (
@@ -71,25 +74,18 @@ const Header: React.FC = () => {
              ">
                
                 {/* Logo Section */}
-                <div
-                    className={`
-                text-white
-                text-[25px]
-                bg-[#32CD32]
-                px-4 
-                py-1
-                rounded-full 
-                hover:scale-125
-                ease-in-out
-                duration-3000
-                cursor-pointer
-                hover:animate-bounce
-                hover:duration-1000
 
-                ${isVisible ? 'animate-in slide-in-from-left duration-700' :''}
-                    `} ref={ref}>
-                    K
-                </div>
+                <Link
+                    href="/"
+                    className="drop-shadow-teralight flex items-center justify-center"
+                    aria-label="Return to home page"
+                >
+                    <div className="relative h-12 w-12 sm:h-14 sm:w-14" >
+                        <AnimatedLogo/>
+                    </div>
+                </Link>
+
+       
 
                 {/* Header Links Section */}
                 <div
@@ -117,8 +113,6 @@ const Header: React.FC = () => {
                  kb1:bg-[#32CD32]
                  kb1:shadow-lg
                  kb1:rounded-full
-                 
-                 ${isVisible ? 'animate-in slide-in-from-top duration-700' :''}
                 `}
 
                 >
