@@ -4,19 +4,23 @@ import Link from "./custom-link";
 import { usePathname } from "next/navigation";
 import MobileNav from './mobile-nav';
 import AnimatedLogo from "@/animations/animationlogo/animated-logo";
+import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
     const pathname = usePathname();
 
+function classNames(
+  ...classes: Array<string | boolean | false | undefined | null>
+): string {
+  return classes.filter(Boolean).join(" ");
+}
 
     const linkspath = [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Projects", path: "/projects" },
-        { name: "Blogs", path: "/blogs" },
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about" },
+        { name: "Projects", href: "/projects" },
+        { name: "Blogs", href: "/blogs" },
     ];
-
-    const isActive = (path: string) => pathname === path;
 
 
     const [isVisible, setIsVisible] = useState(false);
@@ -89,49 +93,55 @@ const Header: React.FC = () => {
 
                 {/* Header Links Section */}
                 <div
-                    className={`
-                     md:flex
-                 md:gap-7
-                 md:justify-center
-                 md:border-2
-                 md:shadow-gray-300
-                 md:p-8
-                 md:rounded-full
-                 md:shadow-lg
-                 md:bg-white
-                 md:w-96
-                 md:relative
-
-                
-                 kb1:w-14
-                 kb1:h-14
-                 kb1:items-center
-                 kb1:p-3
-                 kb1:justify-center
-                 kb1:flex
-                 kb1:shadow-gray-300
-                 kb1:bg-[#32CD32]
-                 kb1:shadow-lg
-                 kb1:rounded-full
-                `}
+                    className={``}
 
                 >
+                    <div className="mx-auto flex items-center justify-between lg:max-w-7xl">
+                        <nav className="hidden items-center gap-2 rounded-full px-2 py-2 shadow-md ring-1 ring-zinc-200 backdrop-blur-md dark:ring-accent/50 md:flex">
+                            <ul className="flex gap-2 text-sm font-medium">
+                                {linkspath.map((_link, index) => {
+                                    return (
+                                        <li
+                                            key={index}
+                                            className="my-3 transition-transform duration-100 hover:scale-[1.1]"
+                                        >
+                                            <Link
+                                                href={_link.href}
+                                                className={classNames(
+                                                    pathname === _link.href
+                                                        ? "font-semibold text-background dark:hover:text-foreground"
+                                                        : "text-foreground",
+                                                    "group relative mx-3 rounded-full px-3 py-2 transition-colors duration-200",
+                                                )}
+                                            >
+                                                {_link.href === pathname && (
+                                                    <motion.span
+                                                        layoutId="tab-pill"
+                                                        animate={{
+                                                            transition: {
+                                                                x: {
+                                                                    type: "spring",
+                                                                    stiffness: 300,
+                                                                    damping: 30,
+                                                                },
+                                                            },
+                                                        }}
+                                                        className="absolute inset-0 -z-10 rounded-full bg-primary group-hover:bg-primary"
+                                                    ></motion.span>
+                                                )}
+                                                {_link.name}
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </nav>
+                    </div>
 
-                    {/* Links */}
-                    {linkspath.map((link, index) => (
-                        <div key={index} className="">
-                            <Link
-                                href={link.path}
-                                className={`p-2 ${isActive(link.path) ? " md:text-white p md:bg-[#32CD32] md:rounded-full kb1:hidden md:block" : "kb1:hidden text-black hover:text-[#32CD32] ease-in-out duration-300 md:block"}
-                                `}
-                            >
-                                {link.name}
-                            </Link>
-                        </div >
-                    ))}
+
 
                     {/*  mobile menu icon start  */}
-                    <div className="block md:hidden text-white">
+                    <div className="block md:hidden text-primary">
                         <MobileNav  />
                     </div>
 

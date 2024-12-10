@@ -16,6 +16,7 @@ export default function MobileNav() {
         setOpen(false);
     }, [pathname]);
 
+
     return (
         <Sheet open={open} onOpenChange={setOpen}>
             {/* Mobile Menu Trigger Button */}
@@ -31,9 +32,9 @@ export default function MobileNav() {
                     {/* Static Navigation Links */}
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-[18px] text-[#32CD32] md:hidden"
+                        className="w-full justify-start text-[18px] text-primary md:hidden"
                     >
-                        <Link href="/">Home</Link>
+                        <Link href="/" className='text-primary'>Home</Link>
                     </Button>
 
                     <Collapsible>
@@ -57,7 +58,7 @@ export default function MobileNav() {
 
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-[18px] text-[#32CD32] md:hidden"
+                        className="w-full justify-start text-[18px] text-[#32CD32] md:hidden "
                     >
                         <Link href="/contact">Blogs</Link>
                     </Button>
