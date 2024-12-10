@@ -1,21 +1,25 @@
-import HomeHero from '@/components/Home/HomeHero'  
+
+import HomeHero from '@/components/Home/HomeHero'
 import HomeSkills from "@/components/Home/HomeSkills";
 import UsingCanvaHook from '@/animations/canvahook/UsingCanvaHook'
 import HomeProjects from '@/components/Home/HomeProjects';
 
 
+
 export default function Home() {
+
   return (
     <>
 
-     
-     <div className={
-      `md:mt-60
+
+
+      <div className={
+        `md:mt-60
       kb1:mt-12
       `
-     }>
+      }>
 
-      <div className={`
+        <div className={`
         md:flex
         md:flex-col
         md:gap-56
@@ -26,10 +30,10 @@ export default function Home() {
         `}>
           <HomeHero />
           <HomeSkills />
-          <HomeProjects/>
+          <HomeProjects />
+        </div>
       </div>
-     </div>
-      
+
       <UsingCanvaHook />
 
 
