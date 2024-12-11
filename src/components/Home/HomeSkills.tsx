@@ -3,24 +3,26 @@ import { useState, useEffect, useRef } from 'react';
 
 import { useAtom } from 'jotai'
 import { fetchedBackendSkillsAtom, fetchedDatabaseSkillsAtom, fetchedLanguagesSkillsAtom, fetchedLibrariesFrameworksSkillsAtom, fetchedToolsSkillsAtom } from '../jotai/AtomStore'
+import FadeRight from '@/animations/faderight/FadeRight';
+import { motion, useInView } from "framer-motion";
 
 
 const HomeSkills = () => {
-    
 
-    
+
+
     const [languages] = useAtom(fetchedLanguagesSkillsAtom)
-    const [librariesframeworks] = useAtom(fetchedLibrariesFrameworksSkillsAtom) 
+    const [librariesframeworks] = useAtom(fetchedLibrariesFrameworksSkillsAtom)
     const [backend] = useAtom(fetchedBackendSkillsAtom)
     const [database] = useAtom(fetchedDatabaseSkillsAtom)
     const [tools] = useAtom(fetchedToolsSkillsAtom)
-    
 
 
 
-    
-    
-    
+
+
+
+
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement | null>(null);
 
@@ -44,6 +46,9 @@ const HomeSkills = () => {
             }
         };
     }, []);
+
+    const languagesRef = useRef<HTMLDivElement | null>(null);
+    const isLanguagesInView = useInView(languagesRef, { once: true });
 
     return (
         <>
@@ -76,6 +81,8 @@ const HomeSkills = () => {
 
                 {/* languages */}
 
+
+
                 <div className={`
                     md:mt-4
                     md:ml-2
@@ -107,11 +114,20 @@ const HomeSkills = () => {
                         kb1:gap-2
                         kb1:w-full
                         `}>
-                        {languages.map((item) => {
+
+                        {languages.map((pill, index) => {
                             return (
-                                <div
-                                    key={item._id}
-                                    className={`
+
+                                <div key={index} ref={languagesRef}>
+                                    <FadeRight
+                                        key={`lang-${index}`}
+                                        duration={0.4}
+                                        delay={0.1 + index * 0.1}
+                                        whileInView={isLanguagesInView}
+                                        className="-z-20 flex items-center justify-around "
+                                    >
+                                        <div className='
+                                        w-full
                                         md:flex
                                         md:gap-5
                                         md:border
@@ -126,19 +142,11 @@ const HomeSkills = () => {
                                         kb1:border-gray-300
                                         kb1:p-1
                                         kb1:items-center
-                                        kb1:rounded-lg
-                                         ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
-
-                                        
-                                        `}
-
-                                    ref={ref}
-                                 
-                                >
-                                    <img
-                                        src={item.thumbnail}
-                                        alt="no-image"
-                                        className={`
+                                        kb1:rounded-lg'>
+                                            <img
+                                                src={pill.thumbnail}
+                                                alt="no-image"
+                                                className={`
                                             md:w-10
                                             md:h-10
                                             md:object-contain
@@ -147,16 +155,18 @@ const HomeSkills = () => {
                                             kb1:h-7
                                             kb1:object-contain
                                             `}
-                                    />
-                                    <p className={`
+                                            />
+                                            <p className={`
                                         md:text-[18px]
                                         md:font-medium
 
                                         kb1:text-[12px]
                                         kb1:font-bold
-                                        `}>{item.title}</p>
+                                        `}>{pill.title}</p>
+                                        </div>
+                                    </FadeRight>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                 </div>
@@ -198,12 +208,19 @@ const HomeSkills = () => {
                         kb1:w-full
                         `}
                     >
-                        {librariesframeworks.map((item) => {
+                        {librariesframeworks.map((pill, index) => {
                             return (
-                                <div
-                                    key={item._id}
-                                   
-                                    className={`
+
+                                <div key={index} ref={languagesRef}>
+                                    <FadeRight
+                                        key={`lang-${index}`}
+                                        duration={0.4}
+                                        delay={0.1 + index * 0.1}
+                                        whileInView={isLanguagesInView}
+                                        className="-z-20 flex items-center justify-around "
+                                    >
+                                        <div className='
+                                        w-full
                                         md:flex
                                         md:gap-5
                                         md:border
@@ -218,18 +235,11 @@ const HomeSkills = () => {
                                         kb1:border-gray-300
                                         kb1:p-1
                                         kb1:items-center
-                                        kb1:rounded-lg
-
-                                        x1
-                                         ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
-                                        `}
-
-                                  
-                                >
-                                    <img
-                                        src={item.thumbnail}
-                                        alt="no-image"
-                                        className={`
+                                        kb1:rounded-lg'>
+                                            <img
+                                                src={pill.thumbnail}
+                                                alt="no-image"
+                                                className={`
                                             md:w-10
                                             md:h-10
                                             md:object-contain
@@ -238,28 +248,25 @@ const HomeSkills = () => {
                                             kb1:h-7
                                             kb1:object-contain
                                             `}
-                                    />
-                                    <p
-                                        className={`
+                                            />
+                                            <p className={`
                                         md:text-[18px]
                                         md:font-medium
 
                                         kb1:text-[12px]
                                         kb1:font-bold
-
-                                    
-                                        `}
-                                       
-                                    >{item.title}</p>
+                                        `}>{pill.title}</p>
+                                        </div>
+                                    </FadeRight>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                 </div>
 
                 {/* Backend */}
 
-                <div 
+                <div
                     className={`
                     md:mt-4
                     md:ml-2
@@ -268,7 +275,7 @@ const HomeSkills = () => {
                    
                     `}
                 >
-                    <h2 
+                    <h2
                         className={`
                         md:text-[20px]
                         md:font-semibold
@@ -281,7 +288,7 @@ const HomeSkills = () => {
                         Backend
                     </h2>
 
-                    <div 
+                    <div
                         className={`
                         md:grid
                         md:grid-cols-4
@@ -294,12 +301,20 @@ const HomeSkills = () => {
                         kb1:w-full
                         `}
                     >
-                        {backend.map((item) => {
+
+                        {backend.map((pill, index) => {
                             return (
-                                <div
-                                    key={item._id}
-                                   
-                                    className={`
+
+                                <div key={index} ref={languagesRef}>
+                                    <FadeRight
+                                        key={`lang-${index}`}
+                                        duration={0.4}
+                                        delay={0.1 + index * 0.1}
+                                        whileInView={isLanguagesInView}
+                                        className="-z-20 flex items-center justify-around "
+                                    >
+                                        <div className='
+                                        w-full
                                         md:flex
                                         md:gap-5
                                         md:border
@@ -314,16 +329,11 @@ const HomeSkills = () => {
                                         kb1:border-gray-300
                                         kb1:p-1
                                         kb1:items-center
-                                        kb1:rounded-lg
-
-                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
-                                        `}
-                                    
-                                >
-                                    <img
-                                        src={item.thumbnail}
-                                        alt="no-image"
-                                        className={`
+                                        kb1:rounded-lg'>
+                                            <img
+                                                src={pill.thumbnail}
+                                                alt="no-image"
+                                                className={`
                                             md:w-10
                                             md:h-10
                                             md:object-contain
@@ -332,25 +342,25 @@ const HomeSkills = () => {
                                             kb1:h-7
                                             kb1:object-contain
                                             `}
-                                    />
-                                    <p 
-                                        className={`
+                                            />
+                                            <p className={`
                                         md:text-[18px]
                                         md:font-medium
 
                                         kb1:text-[12px]
                                         kb1:font-bold
-                                        `}
-                                    >{item.title}</p>
+                                        `}>{pill.title}</p>
+                                        </div>
+                                    </FadeRight>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                 </div>
 
                 {/* Databases */}
 
-                <div 
+                <div
                     className={`
                     md:mt-4
                     md:ml-2
@@ -359,7 +369,7 @@ const HomeSkills = () => {
                    
                     `}
                 >
-                    <h2 
+                    <h2
                         className={`
                         md:text-[20px]
                         md:font-semibold
@@ -373,7 +383,7 @@ const HomeSkills = () => {
                         Databases
                     </h2>
 
-                    <div 
+                    <div
                         className={`
                         md:grid
                         md:grid-cols-4
@@ -386,11 +396,19 @@ const HomeSkills = () => {
                         kb1:w-full
                         `}
                     >
-                        {database.map((item) => {
+                        {database.map((pill, index) => {
                             return (
-                                <div
-                                    key={item._id}
-                                    className={`
+
+                                <div key={index} ref={languagesRef}>
+                                    <FadeRight
+                                        key={`lang-${index}`}
+                                        duration={0.4}
+                                        delay={0.1 + index * 0.1}
+                                        whileInView={isLanguagesInView}
+                                        className="-z-20 flex items-center justify-around "
+                                    >
+                                        <div className='
+                                        w-full
                                         md:flex
                                         md:gap-5
                                         md:border
@@ -405,14 +423,11 @@ const HomeSkills = () => {
                                         kb1:border-gray-300
                                         kb1:p-1
                                         kb1:items-center
-                                        kb1:rounded-lg
-                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
-                                        `}
-                                >
-                                    <img
-                                        src={item.thumbnail}
-                                        alt="no-image"
-                                        className={`
+                                        kb1:rounded-lg'>
+                                            <img
+                                                src={pill.thumbnail}
+                                                alt="no-image"
+                                                className={`
                                             md:w-10
                                             md:h-10
                                             md:object-contain
@@ -421,26 +436,25 @@ const HomeSkills = () => {
                                             kb1:h-7
                                             kb1:object-contain
                                             `}
-                                    />
-                                    <p 
-                                        className={`
+                                            />
+                                            <p className={`
                                         md:text-[18px]
                                         md:font-medium
 
                                         kb1:text-[12px]
                                         kb1:font-bold
-                                      
-                                        `}
-                                    >{item.title}</p>
+                                        `}>{pill.title}</p>
+                                        </div>
+                                    </FadeRight>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                 </div>
 
                 {/* Tools and Technologies */}
 
-                <div 
+                <div
                     className={`
                     md:mt-4
                     md:ml-2
@@ -449,7 +463,7 @@ const HomeSkills = () => {
                    
                     `}
                 >
-                    <h2 
+                    <h2
                         className={`
                         md:text-[20px]
                         md:font-semibold
@@ -463,8 +477,8 @@ const HomeSkills = () => {
                         Tools and Technologies
                     </h2>
 
-                    <div 
-                    
+                    <div
+
                         className={`
                         md:grid
                         md:grid-cols-4
@@ -476,13 +490,21 @@ const HomeSkills = () => {
                         kb1:gap-2
                         kb1:w-full
                         `}
-                        >
-                        {tools.map((item) => {
+                    >
+
+                        {tools.map((pill, index) => {
                             return (
-                                <div
-                                    key={item._id}
-                                   
-                                    className={`
+
+                                <div key={index} ref={languagesRef}>
+                                    <FadeRight
+                                        key={`lang-${index}`}
+                                        duration={0.4}
+                                        delay={0.1 + index * 0.1}
+                                        whileInView={isLanguagesInView}
+                                        className="-z-20 flex items-center justify-around "
+                                    >
+                                        <div className='
+                                        w-full
                                         md:flex
                                         md:gap-5
                                         md:border
@@ -497,16 +519,11 @@ const HomeSkills = () => {
                                         kb1:border-gray-300
                                         kb1:p-1
                                         kb1:items-center
-                                        kb1:rounded-lg
-
-                                        ${isVisible ? 'animate-in slide-in-from-left duration-700 ' : ''}
-                                        `}
-                                   
-                                >
-                                    <img
-                                        src={item.thumbnail}
-                                        alt="no-image"
-                                        className={`
+                                        kb1:rounded-lg'>
+                                            <img
+                                                src={pill.thumbnail}
+                                                alt="no-image"
+                                                className={`
                                             md:w-10
                                             md:h-10
                                             md:object-contain
@@ -515,18 +532,18 @@ const HomeSkills = () => {
                                             kb1:h-7
                                             kb1:object-contain
                                             `}
-                                    />
-                                    <p 
-                                        className={`
+                                            />
+                                            <p className={`
                                         md:text-[18px]
                                         md:font-medium
 
                                         kb1:text-[12px]
                                         kb1:font-bold
-                                        `}
-                                    >{item.title}</p>
+                                        `}>{pill.title}</p>
+                                        </div>
+                                    </FadeRight>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                 </div>

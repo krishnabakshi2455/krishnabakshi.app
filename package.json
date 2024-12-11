@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-scroll-area": "^1.2.1",
@@ -23,6 +24,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.11.17",
     "globby": "^14.0.2",
+    "headlessui": "^0.0.0",
     "jotai": "^2.10.3",
     "lucide-react": "^0.464.0",
     "next": "15.0.3",

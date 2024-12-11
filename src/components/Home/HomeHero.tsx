@@ -55,8 +55,8 @@ const Home = () => {
         kb1:z-20
         kb1:flex
         kb1:flex-col
-
-        ${isVisible?' animate-in fade-in duration-1000':'animate-out fade-out duration-1000'}
+        
+        ${isVisible ?' animate-in slide-in-from-bottom  duration-500':'animate-out fade-out duration-1000'}
 
         `} ref={ref}>
         {/* heading start */}
