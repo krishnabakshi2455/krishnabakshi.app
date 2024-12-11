@@ -1,5 +1,6 @@
 import { createTransport } from "nodemailer";
 
+
 export const sendMail = async function (
   name: string,
   email: string | "SELF",

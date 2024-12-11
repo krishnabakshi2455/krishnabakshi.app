@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useAtom } from 'jotai'
 import { fetchedBackendSkillsAtom, fetchedDatabaseSkillsAtom, fetchedLanguagesSkillsAtom, fetchedLibrariesFrameworksSkillsAtom, fetchedToolsSkillsAtom } from '../jotai/AtomStore'
 import FadeRight from '@/animations/faderight/FadeRight';
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 
 const HomeSkills = () => {
@@ -23,7 +23,7 @@ const HomeSkills = () => {
 
 
 
-    const [isVisible, setIsVisible] = useState(false);
+    const [, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {

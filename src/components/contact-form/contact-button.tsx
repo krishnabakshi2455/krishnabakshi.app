@@ -6,7 +6,7 @@ import ContactFormModal from "@/components/contact-form/contact-form-modal";
 export default function ContactButton() {
   const refSendBtn = useRef<HTMLButtonElement>(null);
 
-  const [isBtnVisible, setIsBtnVisible] = useState(false);
+  const [, setIsBtnVisible] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const observerCallback = (entries: IntersectionObserverEntry[]) => {
