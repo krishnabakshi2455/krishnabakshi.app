@@ -53,7 +53,7 @@ export default function MobileNav() {
                         variant="ghost"
                         className="w-full justify-start text-[18px] text-[#32CD32] md:hidden"
                     >
-                        <Link href={Routes.about}>Projects</Link>
+                        <Link href={Routes.projects}>Projects</Link>
                     </Button>
 
                     <Button
