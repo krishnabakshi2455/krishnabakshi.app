@@ -1,16 +1,16 @@
 import { createClient, groq } from "next-sanity";
-import { Blog, SKILLS,Project } from "@/types";
+import { Blog, SKILLS, Project, Experience } from "@/types";
 
 const client = createClient({
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    dataset: "production",
-    apiVersion: "2024-06-01",
-    useCdn: false
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: "production",
+  apiVersion: "2024-06-01",
+  useCdn: false
 })
 
 export async function getBlogs(): Promise<Blog[]> {
-    return client.fetch(
-        groq`*[_type == "blog"]{
+  return client.fetch(
+    groq`*[_type == "blog"]{
       _id,
       _createdAt,
       _updatedAt,
@@ -19,7 +19,7 @@ export async function getBlogs(): Promise<Blog[]> {
       description,
       "thumbnail": thumbnail.asset->url
     }| order(_createdAt desc)`
-    )
+  )
 }
 export async function getlanguages(): Promise<SKILLS[]> {
   return client.fetch(
@@ -75,7 +75,7 @@ export async function gettools(): Promise<SKILLS[]> {
 }
 export async function getprojects(): Promise<Project[]> {
   return client.fetch(
-    groq`*[_type == "tools"]{
+    groq`*[_type == "projects"]{
       _id,
       title,
       description,
@@ -83,5 +83,18 @@ export async function getprojects(): Promise<Project[]> {
       livelink,
       "thumbnail": thumbnail.asset->url
     }| order(_createdAt desc)`
+  )
+}
+
+export async function getexperience(): Promise<Experience[]> {
+  return client.fetch(
+    groq`*[_type == "experience"]{
+      _id,
+      title,
+      organisation,
+      date,
+      location,
+     description
+     }| order(_createdAt desc)`
   )
 }

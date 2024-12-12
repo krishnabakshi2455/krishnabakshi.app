@@ -32,13 +32,26 @@ export type SKILLS = {
     title: string;
     thumbnail: string;
 }
+export type Experience = {
+    _id: string;
+    title: string;
+    organisation: {
+        name: string,
+        url:string
+    },
+    date:string,
+    location:string,
+    description:string
+
+
+}
 export type Project = {
     _id: string;
-    title:string
+    title: string
     thumbnail: string;
     description: string;
-    sourcecodelink:string
-    livelink:string
+    sourcecodelink: string
+    livelink: string
 }
 
 
