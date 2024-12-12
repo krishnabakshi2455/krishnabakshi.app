@@ -1,18 +1,17 @@
 "use client"
 
-import AboutHero from '@/components/About/AboutHero'
+import AboutHero from '@/components/About/about-hero'
 import React from 'react'
-// import useCanvasCursor from '@/animations/canvahook/useCanvasCursor '
 import UsingCanvaHook from '@/animations/canvahook/UsingCanvaHook'
+import ExperienceShowcaseList from '@/components/experience/experience-showcase-list'
 const page = () => {
-  // useCanvasCursor()
+
   return (
     <>
-      {/* <canvas
-        className="pointer-events-none fixed inset-0"
-        id="canvas"
-      /> */}
+
       <AboutHero />
+      {/* <ExperienceShowcaseList title="Experience"  />
+      <ExperienceShowcaseList title="Education"  /> */}
 
 
       <UsingCanvaHook />
