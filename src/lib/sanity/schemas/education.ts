@@ -17,8 +17,8 @@ const Education: SchemaTypeDefinition = {
             type: 'string',
         },
         {
-            name: 'schoolcollege',
-            title: "SchoolCollege",
+            name: 'organisation',
+            title: "Organisation",
             type: "object",
             fields: [
                 {
@@ -34,13 +34,13 @@ const Education: SchemaTypeDefinition = {
             ]
         },
         {
-            title: "date",
-            name: "Date",
+            name: "date",
+            title: "Date",
             type: "string"
         },
         {
-            title: "location",
-            name: "Location",
+            name: "location",
+            title: "Location",
             type: "string"
         },
     ]

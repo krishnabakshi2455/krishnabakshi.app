@@ -20,7 +20,7 @@ function ShowCaseLiIcon(props: ExperienceListIconProps) {
           cx="50"
           cy="27"
           r="20"
-          className="fill-none stroke-accent stroke-1"
+          className="fill-none stroke-primary stroke-1"
         />
         <motion.circle
           style={{
@@ -31,7 +31,7 @@ function ShowCaseLiIcon(props: ExperienceListIconProps) {
           r="20"
           className="fill-zinc-100 stroke-[5px] dark:fill-zinc-900 dark:stroke-zinc-100"
         />
-        <circle cx="50" cy="27" r="10" className="fill-accent stroke-1" />
+        <circle cx="50" cy="27" r="10" className="fill-primary stroke-1" />
       </svg>
     </figure>
   );
@@ -41,7 +41,7 @@ export interface ExperienceShowcaseListItemProps {
   title: string;
   organisation: {
     name: string;
-    href: string;
+    url: string;
   };
   date: string;
   location: string;
@@ -66,8 +66,8 @@ export default function ExperienceShowcaseListItem(
         <h3 className="text-base font-bold text-foreground sm:text-xl md:text-2xl">
           {props.title}{" "}
           <Link
-            href={props.organisation.href}
-            className="cursor-pointer text-accent"
+            href={props.organisation.url}
+            className="cursor-pointer text-primary"
             target="_blank"
             rel="nofollow"
           >

@@ -18,35 +18,35 @@ const Experience: SchemaTypeDefinition = {
         },
         {
             name: 'organisation',
-            title:"Organisation",
-            type:"object",
-            fields:[
+            title: "Organisation",
+            type: "object",
+            fields: [
                 {
-                    name:"name",
-                    title:"Name",
-                    type:"string",
+                    name: "name",
+                    title: "Name",
+                    type: "string",
                 },
                 {
-                    name:"url",
-                    title:"Url",
-                    type:"string"
+                    name: "url",
+                    title: "Url",
+                    type: "string"
                 }
             ]
         },
         {
-            title:"date",
-            name:"Date",
-            type:"string"
+            name: "date",
+            title: "Date",
+            type: "string"
         },
         {
-            title:"location",
-            name:"Location",
-            type:"string"
+            name: "location",
+            title: "Location",
+            type: "string"
         },
         {
-            title:"description",
-            name:"Description",
-            type:"string"
+            name: "description",
+            title: "Description",
+            type: "string"
         },
     ]
 };

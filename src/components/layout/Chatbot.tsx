@@ -149,22 +149,22 @@ export default function Chatbot() {
         setMessages([<Loader key="1" />]);
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <Welcome key="2" />, <Loader key="3" />]);
-        }, 4000);
+        }, 6000);
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <EmailOption key="4" />, <Loader key="5" />]);
-        }, 5000); // Show EmailOption after 2 seconds
+        }, 8000); // Show EmailOption after 2 seconds
 
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <ChatOption key="6" />, <Loader key="7" />]);
-        }, 6000); // Show ChatOption after 3 seconds
+        }, 9000); // Show ChatOption after 3 seconds
 
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <LinkdinOption key="8" />,<Loader key="9" />]);
-        }, 7000);
+        }, 10000);
 
         setTimeout(() => {
             setMessages((prev) => [...prev.slice(0, -1), <PhoneOption key="10" />]);
-        }, 8000);
+        }, 11000);
     }, [reloadKey]);
 
     useEffect(() => {

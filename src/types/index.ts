@@ -45,6 +45,17 @@ export type Experience = {
 
 
 }
+
+export type Education = {
+    _id: string;
+    title: string;
+    organisation: {
+        name: string,
+        url: string
+    },
+    date: string,
+    location: string,
+}
 export type Project = {
     _id: string;
     title: string

@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { Blog, SKILLS, Project, Experience } from "@/types";
+import { Blog, SKILLS, Project, Experience,Education } from "@/types";
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -94,7 +94,19 @@ export async function getexperience(): Promise<Experience[]> {
       organisation,
       date,
       location,
-     description
+      description
+     }| order(_createdAt desc)`
+  )
+}
+
+export async function geteducation(): Promise<Education[]> {
+  return client.fetch(
+    groq`*[_type == "education"]{
+      _id,
+      title,
+      organisation,
+      date,
+      location,
      }| order(_createdAt desc)`
   )
 }
