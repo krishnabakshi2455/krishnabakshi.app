@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Github, Linkedin, MailIcon } from "lucide-react";
 import ContactFormModal from "@/components/contact-form/contact-form-modal";
-import Link from "../layout/custom-link";
+import Link from "next/link";
 
 export default function ContactButton() {
   const refSendBtn = useRef<HTMLButtonElement>(null);
