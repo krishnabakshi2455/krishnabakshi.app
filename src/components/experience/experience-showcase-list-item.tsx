@@ -45,7 +45,7 @@ export interface ExperienceShowcaseListItemProps {
   };
   date: string;
   location: string;
-  description: string;
+  description?: string;
 }
 
 export default function ExperienceShowcaseListItem(
