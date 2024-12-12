@@ -1,8 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
 import ContactButton from "@/components/contact-form/contact-button";
-// import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons";
-// import { siteMetadata } from "@/data/siteMetaData.mjs";
 
 export default function Footer() {
     const [isVisible, setIsVisible] = useState(false);

@@ -1,12 +1,15 @@
 "use client"
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
+
 
 
 import Typewriter from 'typewriter-effect';
+import FadeUp from "@/animations/fadeup/fade-up";
 
 
 const homedata = {
-  
   roles: [
     "Full Stack Developer",
     "Programmer",
@@ -15,106 +18,80 @@ const homedata = {
 }
 const Home = () => {
 
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const [scrollY, setScrollY] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  let progress = 0;
+  const { current: elContainer } = ref;
+
+  if (elContainer) {
+    progress = Math.min(1, scrollY / elContainer.clientHeight);
+  }
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }, // Adjust this for sensitivity
-    );
+    document.addEventListener("scroll", handleScroll);
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    return () => document.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <>
+      <motion.section
+        animate={{
+          transform: `translateY(${progress * 20}vh)`,
+        }}
+        transition={{ type: "spring", stiffness: 100 }}
+        ref={ref}
+        className="pointer-events-none flex max-h-[1000px] min-h-[calc(100vh-200px)] items-center px-6 sm:px-14 md:h-[calc(100vh-200px)] md:min-h-max md:px-20"
+      >
+        <div className="w-full">
+          <div className="mx-auto max-w-7xl">
+            <AnimatePresence>
+              <FadeUp key="title-main" duration={0.6}>
+                <h1 className="bg-primary bg-clip-text py-2 text-5xl font-bold text-transparent sm:text-6xl md:text-7xl xl:text-8xl">
+                  Krishna Bakshi
+                </h1>
+                <h2 className={`
+                  md:text-[50px]
 
-      <div  className={`
-        justify-center
-
-        md:w-full
-        md:h-[30vh]
-        md:border-solid
-        md:-z-20
-        md:p-16
-        
-        kb1:w-screen
-        kb1:p-5
-        kb1:h-[30vh]
-        kb1:z-20
-        kb1:flex
-        kb1:flex-col
-        
-        ${isVisible ?' animate-in slide-in-from-bottom  duration-500':'animate-out fade-out duration-1000'}
-
-        `} ref={ref}>
-        {/* heading start */}
-        <div className={`
-          flex-col
-          md:flex
-          md:mt-0
-          md:text-left
-          md:gap-3
-
-          kb1:flex
-          kb1:mt-20
-          kb1:text-center
-          kb1:gap-5
-
-          `}
-          >
-          <h1 className={`
-            md:text-5xl
-            md:font-semibold
-
-            kb1:text-3xl
-            kb1:font-semibold
-            kb1:mt-7
-            text-primary
-
-            `}>Krishna Bakshi</h1>
-          <h2 className={`
-            md:text-[50px]
-
-            kb1:text-[20px]
-            flex
-            gap-2
-            `}> 
-            I am a <span className='text-primary'>
-              <Typewriter
-                options={{
-                  strings: homedata.roles,
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </span>
-          </h2>
+                  kb1:text-[20px]
+                  flex
+                  gap-2
+            `}>
+                  I am a <span className='text-primary'>
+                    <Typewriter
+                      options={{
+                        strings: homedata.roles,
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </span>
+                </h2>
+              </FadeUp>
+              <FadeUp key="description" duration={0.6} delay={0.2}>
+                <div className="mt-8 max-w-3xl text-base font-semibold text-zinc-900 dark:text-zinc-200 sm:text-base md:text-xl">
+                  I am a software developer specializing in building
+                  high-performance, user-focused web applications. Skilled in{" "}
+                  <span className="font-semibold text-accent">ReactJS</span>,{" "}
+                  <span className="font-semibold text-accent">NextJS</span>,{" "}
+                  <span className="font-semibold text-accent">SolidJS</span>, and
+                  an expert in{" "}
+                  <span className="font-semibold text-accent">JavaScript</span>,{" "}
+                  <span className="font-semibold text-accent">HTML</span> and{" "}
+                  <span className="font-semibold text-accent">CSS</span>
+                </div>
+              </FadeUp>
+            </AnimatePresence>
+          </div>
         </div>
+      </motion.section>
 
-        {/* heading paragraph */}
-
-        <p className={`
-          md:text-lg
-          md:font-bold
-          md:w-[50vw]
-
-          kb1:text-lg
-          `}>
-          Passionate FullStack Developer | Transforming Ideas Into Seamless And Visually Stunning Web Solution Skilled in ReactJS, NextJS, and an expert in JavaScript, TypeScript, HTML and CSS
-        </p>
-      </div>
+   
 
 
 
