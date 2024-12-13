@@ -175,7 +175,7 @@ export default function Chatbot() {
     }, [messages]);
 
     return (
-        <div key={reloadKey} className="fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-40">
+        <div key={reloadKey} className="fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-[9999]">
             <div className="relative">
                 <button className="flex items-center gap-4" onClick={() => setOpen(true)}>
                     <div className="bg-white p-2 shadow-[0px_0px_16px_0px_#0000004d] rounded-xl rounded-br-none">Get In Touch</div>
