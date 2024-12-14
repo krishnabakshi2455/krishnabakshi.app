@@ -102,7 +102,7 @@ export default function ContactFormModal({
                     className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-accent bg-background p-2 text-sm text-accent transition-transform hover:scale-[1.05] hover:bg-background"
                     onClick={() => setShowModal(false)}
                   >
-                    <XIcon className="h-full w-full text-accent" />
+                    <XIcon className="h-full w-full text-primary" />
                   </button>
                 </div>
                 <ContactForm

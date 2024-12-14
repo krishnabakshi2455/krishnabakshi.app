@@ -22,17 +22,17 @@ export default function MobileNav() {
             {/* Mobile Menu Trigger Button */}
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Mobile menu button">
-                    <MenuIcon className="!h-6 !w-6" />
+                    <MenuIcon className="!h-6 !w-6 text-primary" />
                 </Button>
             </SheetTrigger>
 
             {/* Mobile Menu Content */}
             <SheetContent side="left">
-                <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-20 ">
                     {/* Static Navigation Links */}
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-[18px] text-primary md:hidden"
+                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
                     >
                         <Link href="/" className='text-primary'>Home</Link>
                     </Button>
@@ -41,7 +41,7 @@ export default function MobileNav() {
                         <CollapsibleTrigger className={`w-full`} asChild>
                             <Button
                                 variant="ghost"
-                                className={`flex w-full justify-between text-[18px] text-[#32CD32]`}
+                                className={`flex w-full justify-between text-3xl font-semibold text-primary`}
                             >
                                 <Link href={Routes.about}> About Me</Link>
                             </Button>
@@ -51,14 +51,14 @@ export default function MobileNav() {
 
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-[18px] text-[#32CD32] md:hidden"
+                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
                     >
                         <Link href={Routes.projects}>Projects</Link>
                     </Button>
 
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-[18px] text-[#32CD32] md:hidden "
+                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
                     >
                         <Link href="/contact">Blogs</Link>
                     </Button>
