@@ -32,7 +32,7 @@ export default function MobileNav() {
                     {/* Static Navigation Links */}
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
+                        className="w-full justify-start text-2xl font-semibold text-primary md:hidden"
                     >
                         <Link href="/" className='text-primary'>Home</Link>
                     </Button>
@@ -41,7 +41,7 @@ export default function MobileNav() {
                         <CollapsibleTrigger className={`w-full`} asChild>
                             <Button
                                 variant="ghost"
-                                className={`flex w-full justify-between text-3xl font-semibold text-primary`}
+                                className={`flex w-full justify-between text-2xl font-semibold text-primary`}
                             >
                                 <Link href={Routes.about}> About Me</Link>
                             </Button>
@@ -51,14 +51,14 @@ export default function MobileNav() {
 
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
+                        className="w-full justify-start text-2xl font-semibold text-primary md:hidden"
                     >
                         <Link href={Routes.projects}>Projects</Link>
                     </Button>
 
                     <Button
                         variant="ghost"
-                        className="w-full justify-start text-3xl font-semibold text-primary md:hidden"
+                        className="w-full justify-start text-2xl font-semibold text-primary md:hidden"
                     >
                         <Link href="/contact">Blogs</Link>
                     </Button>
