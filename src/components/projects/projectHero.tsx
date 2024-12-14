@@ -4,9 +4,9 @@ import { PinContainer } from "../ui/3d-pin";
 
  function ProjectHero() {
     return (
-        <div className="h-full w-full grid md:grid-cols-3 gap-20 mt-28 mb-20">
+        <div className="h-full w-full  grid md:grid-cols-3 gap-20 mt-28 mb-20 border-2 border-black">
             <PinContainer
-                title="/ui.aceternity.com"
+                title="Live"
                 href="https://github.com/krishnabakshi2455/PortFolio_6/blob/main/src/components/ui/3d-pin.tsx"
             >
                 <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
