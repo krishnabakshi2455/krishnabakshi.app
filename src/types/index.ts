@@ -61,8 +61,8 @@ export type Project = {
     title: string
     thumbnail: string;
     description: string;
-    sourcecodelink: string
-    livelink: string
+    sourcecodelink: string;
+    livelink: string;
 }
 
 

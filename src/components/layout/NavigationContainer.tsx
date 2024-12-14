@@ -19,7 +19,7 @@ export function NavigationContainer() {
         <div className="fixed left-0 top-0 z-[99999] flex h-screen w-screen items-center justify-center bg-black bg-opacity-60">
           <div className="absolute h-28 w-28 animate-bounce">
             <img
-              src="/favicon.ico"
+              src="/image/loaderlogosvg.svg"
               alt="steinteppich loader"
               className="h-full w-full animate-spin"
             />
