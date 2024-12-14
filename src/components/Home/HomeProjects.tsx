@@ -1,65 +1,79 @@
-"use client"
-import { useState } from "react";
+"use client";
 
-const projects = [
-  {
-    id: 1,
-    title: "ds-steinteppich.de",
-    image: "https://live.staticflickr.com/3620/5834481951_56f883a9e8.jpg", // Replace with your actual image path
-    tags: "#Nextjs #Tailwindcss #Monaco Editor #Vercel",
-  },
-  {
-    id: 2,
-    title: "beyondjustwork.com",
-    image: "https://www.thekerneltrip.com/images/random-forest-vs-extra-trees.jpg", // Replace with your actual image path
-    tags: "#Reactjs #Tailwindcss #Scss #Vite #React-router-dom #Redux #Vercel",
-  },
-  {
-    id: 3,
-    title: "pcbeheben.de",
-    image: "https://wallpaperset.com/w/full/e/5/c/246537.jpg", // Replace with your actual image path
-    tags: "#Reactjs #Vite #Tailwindcss #Vercel #Zustand #React DND",
-  },
-];
+import { useState, useEffect } from "react";
+import { fetchedHomeProjectsAtom } from "../jotai/AtomStore";
+import { useAtomValue } from "jotai";
+import Link from "next/link";
+import { Github } from "lucide-react";
+
+// Define the Project interface to match your schema
+interface Project {
+  _id: string;
+  title: string;
+  description: string;
+  sourcecodelink: string;
+  livelink: string;
+  thumbnail: string; // Adjusted to match "thumbnail.asset->url" from the schema
+}
 
 const ProjectGallery: React.FC = () => {
-  const [activeProject, setActiveProject] = useState(projects[0]);
+  const fetchedProjects = useAtomValue(fetchedHomeProjectsAtom) as Project[];
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  // Sync fetched projects with local state
+  useEffect(() => {
+    if (fetchedProjects.length > 0) {
+      setProjects(fetchedProjects);
+      setActiveProject(fetchedProjects[0]); // Set the first project as active by default
+    }
+  }, [fetchedProjects]);
 
   return (
-    <div className="flex flex-col items-start md:flex-row justify-between md:gap-12 gap-5 px-4 md:px-16 py-8">
+    <div className="flex flex-col items-start md:flex-row justify-between md:gap-12 px-4 md:px-16 py-8">
       {/* Projects List */}
       <div className="space-y-6 w-full md:w-1/2">
-        <h2 className="text-3xl font-semibold text-primary">My Projects</h2>
+        <h2 className="text-5xl font-semibold text-primary">My Projects</h2>
         <div className="flex flex-col gap-10">
           {projects.map((project) => (
-            <div key={project.id}>
+            <div key={project._id} className="flex flex-col gap-2 items-start">
               <button
                 onClick={() => setActiveProject(project)}
-                className={`text-2xl font-bold ${activeProject.id === project.id
-                  ? "text-primary underline"
-                  : "text-gray-700 hover:text-primary"
+                className={`text-3xl font-bold ${activeProject?._id === project._id
+                    ? "text-primary underline"
+                    : "text-gray-700 hover:text-primary"
                   }`}
               >
-                {project.id}. {project.title}
+                {project.title}
               </button>
-              <p className="text-gray-500 text-sm">{project.tags}</p>
+              <p className="text-gray-500 text-sm">{project.description}</p>
+              <Link href={project.sourcecodelink} className="flex underline gap-2 text-primary">
+              <Github/>
+              Source Code
+              </Link>
+
+              <Link href={project.livelink} className="text-primary underline">
+                Live Link
+              </Link>
             </div>
           ))}
         </div>
       </div>
 
       {/* Image Preview */}
-      <div className="relative w-full md:w-1/2 h-[400px] overflow-hidden">
+      <div className="relative w-full md:w-1/2 md:h-[400px] h-[250px] overflow-hidden">
         {projects.map((project) => (
-          <img
-            key={project.id}
-            src={project.image}
-            alt={project.title}
-            className={`absolute inset-0 w-full h-full object-contain transition-transform duration-700 ease-in-out ${activeProject.id === project.id
-              ? "animate-in slide-in-from-right"
+      
+            <img
+              key={project._id}
+              src={project.thumbnail}
+              alt={project.title}
+              className={`absolute inset-0 w-full h-full object-contain transition-transform duration-700 ease-in-out ${activeProject?._id === project._id
+                ? "animate-in slide-in-from-right"
                 : "translate-x-full opacity-0"
-              } hover:translate-x-0`}
-          />
+                }`}
+            />
+         
         ))}
       </div>
     </div>

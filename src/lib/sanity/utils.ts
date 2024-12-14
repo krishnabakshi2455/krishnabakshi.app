@@ -85,6 +85,18 @@ export async function getprojects(): Promise<Project[]> {
     }| order(_createdAt desc)`
   )
 }
+export async function gethomeprojects(): Promise<Project[]> {
+  return client.fetch(
+    groq`*[_type == "homeprojects"]{
+      _id,
+      title,
+      description,
+      sourcecodelink,
+      livelink,
+      "thumbnail": thumbnail.asset->url
+    }| order(_createdAt desc)`
+  )
+}
 
 export async function getexperience(): Promise<Experience[]> {
   return client.fetch(

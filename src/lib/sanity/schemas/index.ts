@@ -7,7 +7,6 @@ import Tools from './tools'
 import Projects from "./Projects"
 import Experience from "./experience"
 import Education from "./education"
-
-const schemas = [blog, languages, LibrariesFrameworks, Backend, DataBase, Tools, Projects, Experience, Education];
-
+import Homeprojects from './homeprojects'
+const schemas = [blog, languages, LibrariesFrameworks, Backend, DataBase, Tools, Projects, Experience, Education,Homeprojects];
 export default schemas;
