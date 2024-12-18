@@ -52,7 +52,7 @@ const Home = () => {
           <div className="mx-auto max-w-7xl">
             <AnimatePresence>
               <FadeUp key="title-main" duration={0.6}>
-                <h1 className="bg-primary bg-clip-text py-2 text-5xl font-bold text-transparent sm:text-6xl md:text-7xl xl:text-8xl">
+                <h1 className="bg-clip-text py-2 text-5xl font-bold text-primary sm:text-6xl md:text-7xl xl:text-8xl">
                   Krishna Bakshi
                 </h1>
                 <h2 className={`
