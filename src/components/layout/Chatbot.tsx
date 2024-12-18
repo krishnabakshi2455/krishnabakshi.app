@@ -175,8 +175,8 @@ export default function Chatbot() {
     }, [messages]);
 
     return (
-        <div key={reloadKey} className="fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-[9999] bg-transparent">
-            <div className="relative">
+        <div key={reloadKey} className="fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-[9999] ">
+            <div className="relative bg-transparent">
                 <button className="flex items-center gap-4" onClick={() => setOpen(true)}>
                     <div className="bg-white p-2 shadow-[0px_0px_16px_0px_#0000004d] rounded-xl rounded-br-none">Get In Touch</div>
                     <img
@@ -199,13 +199,13 @@ export default function Chatbot() {
                             </div>
                             <div className="flex gap-2">
                                 <button
-                                    className="hover:bg-white hover:text-primary rounded-lg duration-300 p-1"
+                                    className="hover:bg-white hover:text-primary rounded-lg duration-300 p-1 bg-transparent"
                                     onClick={() => setReloadKey((key) => key + 1)}
                                 >
                                     <RefreshCcw />
                                 </button>
                                 <button
-                                    className="hover:bg-white hover:text-primary rounded-lg duration-300 p-1"
+                                    className="hover:bg-white hover:text-primary rounded-lg duration-300 p-1 bg-transparent"
                                     onClick={() => setOpen(false)}
                                 >
                                     <X />
