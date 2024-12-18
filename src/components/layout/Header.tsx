@@ -141,7 +141,7 @@ function classNames(
 
 
                     {/*  mobile menu icon start  */}
-                    <div className="block md:hidden text-primary">
+                    <div className="block md:hidden text-primary bg-transparent">
                         <MobileNav  />
                     </div>
 

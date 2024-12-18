@@ -40,8 +40,8 @@ const ProjectGallery: React.FC = () => {
               <button
                 onClick={() => setActiveProject(project)}
                 className={`text-3xl font-bold ${activeProject?._id === project._id
-                    ? "text-primary underline"
-                    : "text-gray-700 hover:text-primary duration-300"
+                    ? "text-primary underline bg-transparent"
+                    : "text-gray-700 hover:text-primary duration-300 bg-transparent"
                   }`}
               >
                 {project.title}
