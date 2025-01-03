@@ -74,7 +74,6 @@ function classNames(
              kb1:fixed
              kb1:w-screen
              kb1:z-[55]
-             
              ">
                
                 {/* Logo Section */}
