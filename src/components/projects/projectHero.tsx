@@ -33,10 +33,6 @@ function ProjectHero() {
                                             }
                                         </span>
                                     </div>
-                                    {/* <div className="flex flex-1 w-full rounded-lg mt-4 from-violet-500 via-purple-500 to-blue-500">
-                                    <img src={projects.thumbnail} alt="image/mainimg.png" className="h-[10rem] w-full object-contain" />
-                                </div> */}
-
                                     <div className="flex gap-2">
                                         <Github className="text-primary" />
                                         <Link
