@@ -31,8 +31,11 @@ export default function ContactFormModal({
 
   const handleSubmit = async (values: ContactFormValues) => {
     setIsSendingMail(true);
+    console.log("values",values);
+    // const sheeturl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL as string;
+    
     try {
-      const response = await fetch("/api/sendmail", {
+      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL as string, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -63,6 +66,28 @@ export default function ContactFormModal({
     }
     setIsSendingMail(false);
   };
+
+  // const handleSubmit = async (values: ContactFormValues) => {
+  //   setIsSendingMail(true);
+
+  //   fetch('https://sheetdb.io/api/v1/fpql5r1pjdj1n', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       data: [
+  //         {
+  //           body: JSON.stringify(values)
+  //         }
+  //       ]
+  //     })
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+
+  // };
   return (
     <>
       <Transition show={showModal} as={Fragment}>
