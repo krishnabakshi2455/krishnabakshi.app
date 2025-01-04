@@ -73,14 +73,6 @@ export default function ContactForm({
   handleSubmit,
 }: ContactFormProps) {
 
-  const handleFormSubmit = async (values: ContactFormValues) => {
-    // Log the form values to the console
-    console.log("Form submitted with values:", values);
-
-    // Call the original handleSubmit function (e.g., for sending the data)
-    await handleSubmit(values);
-  };
-
   return (
     <>
       <Formik
