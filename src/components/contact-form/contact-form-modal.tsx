@@ -34,7 +34,7 @@ export default function ContactFormModal({
     console.log("values",values);
     
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL as string, {
+      const response = await fetch('/api', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),

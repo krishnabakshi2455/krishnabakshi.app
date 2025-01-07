@@ -9,7 +9,7 @@ import { type FormiKInputFieldProps } from "@/utility/types";
 export const mailValidationSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Email required"),
   name: Yup.string().required("Name required"),
-  subject: Yup.string().required("Subject required"),
+  phone:Yup.string().required('Number Required'),
   message: Yup.string().required("Message required"),
 });
 
@@ -39,11 +39,11 @@ const FormFieldsData: FormFields[] = [
     placeholder: "Name",
   },
   {
-    name: "subject",
-    label: "Subject",
+    name: "phone",
+    label: "Phone",
     type: "text",
     fieldType: "text",
-    placeholder: "Subject",
+    placeholder: "Phone",
   },
   {
     name: "message",
@@ -58,7 +58,7 @@ const initialFormValues: ContactFormValues = {
   email: "",
   name: "",
   message: "",
-  subject: "",
+  phone:""
 };
 console.log("initialFormValues",initialFormValues);
 
