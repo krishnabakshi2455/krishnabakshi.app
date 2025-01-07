@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { JWT } from 'google-auth-library';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { format } from 'date-fns';
@@ -46,6 +46,10 @@ export async function POST(req: any) {
             Email: data.email,
             Phone: data.phone,
             Message: data.message,
+            IP: data.ip,
+            Country:data.country,
+            Region:data.region,
+            Date:data.createdAt
         });
 
         // Format the Slack message
