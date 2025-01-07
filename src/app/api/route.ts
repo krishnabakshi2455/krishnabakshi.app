@@ -46,10 +46,10 @@ export async function POST(req: any) {
             Email: data.email,
             Phone: data.phone,
             Message: data.message,
-            IP: data.ip,
-            Country:data.country,
-            Region:data.region,
-            Date:data.createdAt
+            IP:ip,
+            Country:country,
+            Region:region,
+            Date:createdAt
         });
 
         // Format the Slack message
