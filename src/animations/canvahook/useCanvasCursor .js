@@ -126,7 +126,7 @@ const useCanvasCursor = () => {
             ctx.globalCompositeOperation = "source-over";
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             ctx.globalCompositeOperation = "lighter";
-            ctx.strokeStyle = "#32CD32";
+            ctx.strokeStyle = "#0F4857";
             ctx.lineWidth = 1;
 
             for (let i = 0; i < E.trails; i++) {
