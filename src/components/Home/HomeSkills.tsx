@@ -131,7 +131,7 @@ const HomeSkills = () => {
                                         md:flex
                                         md:gap-5
                                         md:border
-                                        md:border-gray-300 
+                                        md:border-primary
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
@@ -139,7 +139,7 @@ const HomeSkills = () => {
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
-                                        kb1:border-gray-300
+                                        kb1:border-primary
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg'>
@@ -224,7 +224,7 @@ const HomeSkills = () => {
                                         md:flex
                                         md:gap-5
                                         md:border
-                                        md:border-gray-300 
+                                        md:border-primary
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
@@ -232,7 +232,7 @@ const HomeSkills = () => {
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
-                                        kb1:border-gray-300
+                                        kb1:border-primary
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg'>
@@ -318,7 +318,7 @@ const HomeSkills = () => {
                                         md:flex
                                         md:gap-5
                                         md:border
-                                        md:border-gray-300 
+                                        md:border-primary
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
@@ -326,7 +326,7 @@ const HomeSkills = () => {
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
-                                        kb1:border-gray-300
+                                        kb1:border-primary
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg'>
@@ -412,7 +412,7 @@ const HomeSkills = () => {
                                         md:flex
                                         md:gap-5
                                         md:border
-                                        md:border-gray-300 
+                                        md:border-primary 
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
@@ -420,7 +420,7 @@ const HomeSkills = () => {
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
-                                        kb1:border-gray-300
+                                        kb1:border-primary
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg'>
@@ -508,7 +508,7 @@ const HomeSkills = () => {
                                         md:flex
                                         md:gap-5
                                         md:border
-                                        md:border-gray-300 
+                                        md:border-primary
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
@@ -516,7 +516,7 @@ const HomeSkills = () => {
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
-                                        kb1:border-gray-300
+                                        kb1:border-primary
                                         kb1:p-1
                                         kb1:items-center
                                         kb1:rounded-lg'>
