@@ -23,7 +23,7 @@ const HomeSkills = () => {
 
 
 
-    const [, setIsVisible] = useState(false);
+    const [IsVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -48,7 +48,8 @@ const HomeSkills = () => {
     }, []);
 
     const languagesRef = useRef<HTMLDivElement | null>(null);
-    const isLanguagesInView = useInView(languagesRef, { once: true });
+    const isLanguagesInView = true
+    
 
     return (
         <>
@@ -86,16 +87,11 @@ const HomeSkills = () => {
                 <div className={`
                     md:mt-4
                     md:ml-2
-
                     kb1:mt-5
-          
-
-                    
                     `}>
                     <h2 className={`
                         md:text-[20px]
                         md:font-semibold
-
                         kb1:text-[15px]
                         kb1:font-bold
                         text-primary
@@ -108,7 +104,6 @@ const HomeSkills = () => {
                         md:grid-cols-4
                         md:gap-4
                         md:w-full
-
                         kb1:grid
                         kb1:grid-cols-2
                         kb1:gap-2
@@ -118,7 +113,9 @@ const HomeSkills = () => {
                         {languages.map((pill, index) => {
                             return (
 
-                                <div key={index} ref={languagesRef}>
+                                <div key={index} 
+                                ref={languagesRef}
+                                >
                                     <FadeRight
                                         key={`lang-${index}`}
                                         duration={0.4}
@@ -135,7 +132,6 @@ const HomeSkills = () => {
                                         md:p-2 
                                         md:items-center 
                                         md:rounded-lg
-
                                         kb1:flex
                                         kb1:gap-2
                                         kb1:border
@@ -211,7 +207,9 @@ const HomeSkills = () => {
                         {librariesframeworks.map((pill, index) => {
                             return (
 
-                                <div key={index} ref={languagesRef}>
+                                <div key={index} 
+                                // ref={languagesRef}
+                                >
                                     <FadeRight
                                         key={`lang-${index}`}
                                         duration={0.4}
@@ -305,7 +303,9 @@ const HomeSkills = () => {
                         {backend.map((pill, index) => {
                             return (
 
-                                <div key={index} ref={languagesRef}>
+                                <div key={index} 
+                                ref={languagesRef}
+                                >
                                     <FadeRight
                                         key={`lang-${index}`}
                                         duration={0.4}
@@ -399,7 +399,9 @@ const HomeSkills = () => {
                         {database.map((pill, index) => {
                             return (
 
-                                <div key={index} ref={languagesRef}>
+                                <div key={index} 
+                                ref={languagesRef}
+                                >
                                     <FadeRight
                                         key={`lang-${index}`}
                                         duration={0.4}

@@ -46,8 +46,6 @@ function classNames(
             }
         };
     }, []);
-
-    console.log(isVisible);
     
 
 
@@ -82,8 +80,8 @@ function classNames(
                     className="drop-shadow-teralight flex items-center justify-center"
                     aria-label="Return to home page"
                 >
-                    <div className="relative h-12 w-12 sm:h-14 sm:w-14" >
-                        <AnimatedLogo/>
+                    <div className="relative" >
+                        <AnimatedLogo className={'flex items-center w-20 h-20 '}/>
                     </div>
                 </Link>
 
