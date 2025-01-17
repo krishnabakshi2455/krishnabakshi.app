@@ -81,7 +81,7 @@ function classNames(
                     aria-label="Return to home page"
                 >
                     <div className="relative" >
-                        <AnimatedLogo className={'flex items-center w-20 h-20 '}/>
+                        <AnimatedLogo className={'flex items-center w-60 h-20 '}/>
                     </div>
                 </Link>
 
