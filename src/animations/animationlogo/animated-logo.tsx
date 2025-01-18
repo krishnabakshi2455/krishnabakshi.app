@@ -36,7 +36,7 @@ export default function AnimatedLogo({ className
         >
             <defs>
                 <style>
-                    {`.cls-1{fill:#008ecc;stroke:#008ecc}.cls-2{fill:#38c5dd;stroke:#38c5dd}`}
+                    {`.cls-1{fill:#0359a0;stroke:#0359a0}.cls-2{fill:#38c5dd;stroke:#38c5dd}`}
                 </style>
             </defs>
             <motion.path
