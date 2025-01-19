@@ -15,6 +15,7 @@ export default function ContactButton() {
     setIsBtnVisible(!entry.isIntersecting);
   };
 
+  
   useEffect(() => {
     const btn = refSendBtn.current;
     const observer = new IntersectionObserver(
