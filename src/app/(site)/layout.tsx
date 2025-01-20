@@ -21,15 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQDN2JH6Q3"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T7N43T37FP"></script>
+        <script dangerouslySetInnerHTML={{__html:`
         window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-WQDN2JH6Q3');  
-        `}} />
+          gtag('config', 'G-T7N43T37FP');  
+        `}}/>
       </head>
       <body
         className={`antialiased`}
