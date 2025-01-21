@@ -28,7 +28,7 @@ export default function RootLayout({
         window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', ${process.env.ANALYTICS_ID});  
+          gtag('config', '${process.env.ANALYTICS_ID}');  
           `}} />
         {/* // gtag('config', 'G-T7N43T37FP');   */}
       </head>
