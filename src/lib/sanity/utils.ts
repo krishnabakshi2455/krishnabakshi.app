@@ -91,7 +91,7 @@ export async function gethomeprojects(): Promise<Project[]> {
       _id,
       title,
       description,
-      sourcecodelink,
+      company,
       livelink,
       "thumbnail": thumbnail.asset->url
     }| order(_createdAt desc)`

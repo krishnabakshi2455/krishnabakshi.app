@@ -38,8 +38,8 @@ const Projects: SchemaTypeDefinition = {
             validation: (Rule) => Rule.required()
         },
         {
-            name: 'sourcecodelink',
-            title: 'SourceCodeLink',
+            name: 'company',
+            title: 'Company',
             type: 'string',
             validation: (Rule) => Rule.required()
         },
