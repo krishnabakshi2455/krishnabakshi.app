@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { Blog, SKILLS, Project, Experience,Education } from "@/types";
+import { Blog, SKILLS, Project, Experience,Education, HomeProject } from "@/types";
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -85,7 +85,7 @@ export async function getprojects(): Promise<Project[]> {
     }| order(_createdAt desc)`
   )
 }
-export async function gethomeprojects(): Promise<Project[]> {
+export async function gethomeprojects(): Promise<HomeProject[]> {
   return client.fetch(
     groq`*[_type == "homeprojects"]{
       _id,

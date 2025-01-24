@@ -5,6 +5,7 @@ import { fetchedHomeProjectsAtom } from "../jotai/AtomStore";
 import { useAtomValue } from "jotai";
 import Link from "next/link";
 import { Github } from "lucide-react";
+import { HomeProject } from "@/types";
 
 // Define the Project interface to match your schema
 interface Project {
@@ -17,9 +18,9 @@ interface Project {
 }
 
 const ProjectGallery: React.FC = () => {
-  const fetchedProjects = useAtomValue(fetchedHomeProjectsAtom) as Project[];
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const fetchedProjects = useAtomValue(fetchedHomeProjectsAtom) as HomeProject[];
+  const [projects, setProjects] = useState<HomeProject[]>([]);
+  const [activeProject, setActiveProject] = useState<HomeProject | null>(null);
 
   // Sync fetched projects with local state
   useEffect(() => {
@@ -47,11 +48,7 @@ const ProjectGallery: React.FC = () => {
                 {project.title}
               </button>
               <p className="text-gray-500 text-sm">{project.description}</p>
-              <Link href={project.sourcecodelink} className="flex underline gap-2 text-primary">
-              <Github/>
-              Source Code
-              </Link>
-
+              <h3 className="text-primary text-3xl font-semibold">{project.company}</h3>
               <Link href={project.livelink} className="text-primary underline">
                 Live Link
               </Link>

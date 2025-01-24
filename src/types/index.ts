@@ -64,6 +64,14 @@ export type Project = {
     livelink: string;
     company:string
 }
+export type HomeProject = {
+    _id: string;
+    title: string
+    thumbnail: string;
+    description: string;
+    livelink: string;
+    company: string
+}
 export type Location = {
     _id: string;
     _createdAt: string;
