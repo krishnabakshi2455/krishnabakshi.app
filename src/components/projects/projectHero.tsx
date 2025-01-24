@@ -9,7 +9,9 @@ function ProjectHero() {
     const Projects = useAtomValue(fetchedProjectsAtom);
     console.log("this is fetchedprojects", Projects);
     return (
-        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-72  mb-28 place-content-center mt-[28%] md:mt-0 place-items-center lg:p-20 md:p-10 p-5">
+        <div className="lg:p-20 md:p-10 p-5">
+            <h1 className="mt-10 text-primary font-semibold text-3xl underline mb-5 lg:mb-0">My Projects</h1>
+        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-72   mb-28 place-content-center mt-[30%] md:mt-0 place-items-center ">
             {
                 Projects.map((projects, index) => {
                     return (
@@ -33,12 +35,10 @@ function ProjectHero() {
                                             }
                                         </span>
                                     </div>
-                                    <div className="flex gap-2">
-                                        <Github className="text-primary" />
-                                        <Link
-                                            href={projects.sourcecodelink}
-                                            className="underline text-primary"
-                                        >Source Code Link</Link>
+                                    <div className="flex gap-2 mt-5">
+                                        <h2 className="text-primary underline font-semibold text-2xl">
+                                        {projects.company}
+                                        </h2>
                                     </div>
                                 </div>
                             </PinContainer>
@@ -47,10 +47,7 @@ function ProjectHero() {
                     )
                 })
             }
-
-
-
-
+        </div>
         </div>
     );
 }

@@ -61,12 +61,9 @@ export type Project = {
     title: string
     thumbnail: string;
     description: string;
-    sourcecodelink: string;
     livelink: string;
+    company:string
 }
-
-
-
 export type Location = {
     _id: string;
     _createdAt: string;

@@ -21,7 +21,6 @@ const Projects: SchemaTypeDefinition = {
                 Rule.max(65).warning('Too long: Title should be less than 65 characters'),
                 Rule.custom((title: string, context: ValidationContext) => {
                     const keyphrase = context.document?.keyphrase;
-
                     // Ensure keyphrase is a string
                     if (!keyphrase || typeof keyphrase !== 'string') return true;
 
@@ -38,14 +37,14 @@ const Projects: SchemaTypeDefinition = {
             validation: (Rule) => Rule.required()
         },
         {
-            name: 'sourcecodelink',
-            title: 'SourceCodeLink',
+            name: 'livelink',
+            title: 'LiveLink',
             type: 'string',
             validation: (Rule) => Rule.required()
         },
         {
-            name: 'livelink',
-            title: 'LiveLink',
+            name: 'company',
+            title: 'Company',
             type: 'string',
             validation: (Rule) => Rule.required()
         },
