@@ -11,7 +11,7 @@ function ProjectHero() {
     return (
         <div className="lg:p-20 md:p-10 p-5">
             <h1 className="mt-10 text-primary font-semibold text-3xl underline mb-5 lg:mb-0">My Projects</h1>
-        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-72 mb-28 place-content-center mt-[40%] md:mt-0 place-items-center ">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-96 mb-28 place-content-center mt-[50%] md:mt-0 place-items-center ">
             {
                 Projects.map((projects, index) => {
                     return (
@@ -42,7 +42,7 @@ function ProjectHero() {
                                     </div>
 
                                 <div className="flex gap-2 mt-5">
-                                    <h3 className="text-primary underline font-semibold text-2xl">
+                                    <h3 className="text-primary underline font-semibold text-sm">
                                         Click Here
                                     </h3>
                                 </div>
