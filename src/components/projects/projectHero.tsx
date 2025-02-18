@@ -11,7 +11,7 @@ function ProjectHero() {
     return (
         <div className="lg:p-20 md:p-10 p-5">
             <h1 className="mt-10 text-primary font-semibold text-3xl underline mb-5 lg:mb-0">My Projects</h1>
-        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-96 mb-28 place-content-center mt-[50%] md:mt-0 place-items-center ">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-y-24 gap-96 lg:gap-60 mb-28 place-content-center mt-[50%] md:mt-0 place-items-center ">
             {
                 Projects.map((projects, index) => {
                     return (
@@ -21,7 +21,7 @@ function ProjectHero() {
                                 key={index}
                                 className=""
                             >
-                                <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 md:w-[40vw] w-[80vw] md:h-full ">
+                                <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 md:w-[30vw] w-[80vw] md:h-full ">
                                     <div className="flex flex-1 w-full rounded-lg mt-4 from-primary/25 via-primary/15 to-primary/5">
                                         <img src={projects.thumbnail} alt="image/mainimg.png" className="h-[10rem] w-full md:object-cover object-contain" />
                                     </div>
