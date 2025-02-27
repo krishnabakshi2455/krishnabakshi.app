@@ -2,14 +2,14 @@ import portableTextComponents from "@/lib/portable-text-components"
 import { getBlog, getBlogs } from "@/lib/sanity/utils"
 import { PortableText } from "next-sanity"
 import { format } from 'date-fns'
-import PageReader from "@/components/page-reader"
 import Link from "@/components/layout/custom-link"
-import Routes from "@/lib/routes"
+import Routes from '@/lib/Route';
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import PageReader from "@/components/page-reader"
 
-export async function generateMetadata({ params }: { params: { blog: string } }): Promise<Metadata> {
-    const { blog } = params
+export async function generateMetadata({ params }: { params: Promise<any> }): Promise<Metadata> {
+    const { blog } = await params
     const blogPost = await getBlog(blog)
     if (!blogPost) return notFound()
     return {
@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: { params: { blog: string } })
     }
 }
 
-export default async function Page({ params }: { params: { blog: string } }) {
-    const { blog } = params
+export default async function Page({ params }: { params: Promise<any>}) {
+    const { blog } = await params
     const blogPost = await getBlog(blog)
     const blogs = await getBlogs()
     if (!blogPost) return notFound()

@@ -36,9 +36,10 @@ export const metadata: Metadata = {
 export default async function Page({
     searchParams,
 }: {
-    searchParams: { page?: string };
+    searchParams: Promise<any>;
 }) {
-    const currentPage = parseInt(searchParams.page || "1", 10);
+    const _searchParams = await searchParams
+    const currentPage = parseInt(_searchParams.page || "1", 10);
     const limit = 12; // Number of blogs per page
     const allBlogs = await getBlogs(); // Fetch all blogs
     const totalBlogs = allBlogs.length;

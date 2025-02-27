@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools, getexperience, geteducation, getprojects, gethomeprojects } from "@/lib/sanity/utils";
+import { getlanguages, getlibrariesframeworks, getbackend, getdatabase, gettools, getexperience, geteducation, getprojects, gethomeprojects, getBlog, getBlogs } from "@/lib/sanity/utils";
 
 // Create Jotai atoms for asynchronous data fetching
 export const fetchedLanguagesSkillsAtom = atom(async () => {

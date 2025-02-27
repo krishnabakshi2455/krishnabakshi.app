@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         { name: "Home", href: Routes.home },
         { name: "About", href: Routes.about },
         { name: "Projects", href: Routes.projects },
-        { blog: "Blog", href: Routes.blog }
+        { name: "Blogs", href: Routes.blog },
     ];
 
 
@@ -48,7 +48,8 @@ const Header: React.FC = () => {
             }
         };
     }, []);
-
+    // console.log("linkspath",linkspath);
+    
 
 
     return (
@@ -94,7 +95,7 @@ const Header: React.FC = () => {
                     className={``}
 
                 >
-                    <div className="mx-auto flex items-center justify-between lg:max-w-7xl">
+                    <div className="mx-auto flex items-center justify-between w-full">
                         <nav className="hidden items-center gap-2 rounded-full px-2 py-2 shadow-md ring-1 ring-zinc-200 backdrop-blur-md dark:ring-accent/50 md:flex">
                             <ul className="flex gap-2 text-sm font-medium">
                                 {linkspath.map((_link, index) => {

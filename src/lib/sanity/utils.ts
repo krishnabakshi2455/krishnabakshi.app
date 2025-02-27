@@ -21,6 +21,22 @@ export async function getBlogs(): Promise<Blog[]> {
     }| order(_createdAt desc)`
   )
 }
+export async function getBlog(slug: string): Promise<Blog> {
+  return client.fetch(
+    groq`*[_type == "blog" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      _updatedAt,
+      title,
+      "slug": slug.current,
+      description,
+      keywords,
+      "thumbnail": thumbnail.asset->url,
+      content
+    }`,
+    { slug }
+  )
+}
 export async function getlanguages(): Promise<SKILLS[]> {
   return client.fetch(
     groq`*[_type == "languages"]{
