@@ -55,6 +55,13 @@ export default function MobileNav() {
                     >
                         <Link href={Routes.projects}>Projects</Link>
                     </Button>
+
+                    <Button
+                        variant="ghost"
+                        className="w-full justify-start text-2xl font-semibold text-primary md:hidden bg-transparent"
+                    >
+                        <Link href={Routes.blog}>Blogs</Link>
+                    </Button>
                 </div>
             </SheetContent>
         </Sheet>

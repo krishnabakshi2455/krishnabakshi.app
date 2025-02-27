@@ -5,20 +5,22 @@ import { usePathname } from "next/navigation";
 import MobileNav from './mobile-nav';
 import AnimatedLogo from "@/animations/animationlogo/animated-logo";
 import { motion } from "framer-motion";
+import Routes from '@/lib/Route';
 
 const Header: React.FC = () => {
     const pathname = usePathname();
 
-function classNames(
-  ...classes: Array<string | boolean | false | undefined | null>
-): string {
-  return classes.filter(Boolean).join(" ");
-}
+    function classNames(
+        ...classes: Array<string | boolean | false | undefined | null>
+    ): string {
+        return classes.filter(Boolean).join(" ");
+    }
 
     const linkspath = [
-        { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Projects", href: "/projects" },
+        { name: "Home", href: Routes.home },
+        { name: "About", href: Routes.about },
+        { name: "Projects", href: Routes.projects },
+        { blog: "Blog", href: Routes.blog }
     ];
 
 
@@ -46,7 +48,7 @@ function classNames(
             }
         };
     }, []);
-    
+
 
 
     return (
@@ -72,7 +74,7 @@ function classNames(
              kb1:w-screen
              kb1:z-[55]
              ">
-               
+
                 {/* Logo Section */}
 
                 <Link
@@ -81,11 +83,11 @@ function classNames(
                     aria-label="Return to home page"
                 >
                     <div className="relative" >
-                        <AnimatedLogo className={'flex items-center w-60 h-20 '}/>
+                        <AnimatedLogo className={'flex items-center w-60 h-20 '} />
                     </div>
                 </Link>
 
-       
+
 
                 {/* Header Links Section */}
                 <div
@@ -138,12 +140,12 @@ function classNames(
 
                     {/*  mobile menu icon start  */}
                     <div className="block md:hidden text-primary bg-transparent">
-                        <MobileNav  />
+                        <MobileNav />
                     </div>
 
                     {/* mobile menu links */}
 
-                    
+
 
 
                 </div>
